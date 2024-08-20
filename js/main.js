@@ -1,131 +1,244 @@
-// Crear variable con var (NO USAR)
-// var profesor = "Rodrigo";
-
-// Crear variables con let y const
-// let edad;
-// const nombre = "Pedro";
-
-// Cambiar el valor de una variable let
-// edad = 40;
-// edad = 50;
-// edad = 60;
-
-// Cambiar de valor una variable const
-// nombre = "óñqwjkeqkwjekjwq";
-
-/*
-    OPERACIONES CON VARIABLES
+/**
+ * CONDICIONALES FORZANDO LA CONDICIÓN A TRUE O FALSE
  */
 
-// const numero1 = 10;
-// const numero2 = 20;
-// const numero3 = 30;
-// const numero4 = 40;
+// if (false) {
+//     const nombre = prompt("Ingrese el nombre");
 //
-// const resultadoSuma = numero1 + numero2; // 30
-// const resultadoResta = numero3 - numero1; // 20
-// const resultadoMultiplicacion = numero1 * numero2; // 200
-// const resultadoDivision = numero3 / numero1; // 3
+//     console.log("HOLA");
+//     console.log("CÓMO ESTÁS?");
+//     console.log("BIENVENIDOS A JAVASCRIPT");
+// }
 //
-// const resultadoSuma2 = numero1 + numero2 + numero4 * numero3 / numero1 + 50;
-// // 10 + 20 + 40 * 30 / 10 + 50
+// if (true) {
+//     console.log("Hola 2");
+// }
+//
+// console.log("Fin del if");
 
-// Operaciones con strings
-
-// const nombre = "Pepe";
-// const segundoNombre = "Juan";
-// const apellido = "Rodriguez";
-// const espacio = " ";
-//
-// const nombreCompleto = nombre + apellido; // "PepeRodriguez"
-// const nombreCompleto2 = nombre + segundoNombre + apellido; // "PepeJuanRodriguez"
-//
-// const nombreCompletoConEspacios = nombre + espacio + segundoNombre + espacio + apellido; // "Pepe Juan Rodriguez"
-
-/*
-    PROMPT, CONSOLA Y ALERT
+/**
+ * OPERADOR DE EQUIVALENCIA
  */
 
-// const numero1 = 10;
-// const numero2 = 20;
-// const numero3 = 30;
-// const numero4 = 40;
+// ESTO ES VERDADERO
+// const anio = 2024;
 //
-// const resultadoSuma = numero1 + numero2; // 30
-// const resultadoResta = numero3 - numero1; // 20
-// const resultadoMultiplicacion = numero1 * numero2; // 200
-// const resultadoDivision = numero3 / numero1; // 3
-//
-// console.log(resultadoSuma);
-// console.log(resultadoResta);
-// console.log(resultadoMultiplicacion);
-// console.log(resultadoDivision);
-//
-// const nombre = "Fernando";
-//
-// console.log(nombre);
-//
-// const edad = "50";
-//
-// console.log(edad);
+// if (anio == 2024) {
+//     console.log("EL AÑO ES 2024");
+// }
 
-// let numero = 50;
+// ESTO ES FALSO
+// const anio = 2024;
 //
-// console.log(numero);
-//
-// numero = 60;
-//
-// console.log(numero);
+// if (anio == 2025) {
+//     console.log("EL AÑO ES 2024");
+// }
 
-/*
-    PROMPT
+// COMPARACIÓN CON STRING
+// const nombre = prompt("Ingrese el nombre");
+//
+// if(nombre == "Pepe") {
+//     console.log("HOLA PEPE CÓMO ESTÁS?");
+// }
+
+/**
+ * IF - ELSE
  */
 
 // const nombre = prompt("Ingrese el nombre");
-// const apellido = prompt("Ingrese el apellido");
 //
-// const nombreCompleto = nombre + " " + apellido;
-//
-// console.log("Bienvenido " + nombreCompleto);
+// if (nombre == "Pepe") {
+//     console.log("HOLA PEPE CÓMO ESTÁS?");
+// } else {
+//     console.log("USTED NO ES PEPE");
+// }
 
-// PROMPT CON LOS NUMEROS
-// const numero1 = parseInt(prompt("Ingrese un numero"));
-// const numero2 = parseInt(prompt("Ingrese otro numero"));
-//
-// const resultadoSuma = numero1 + numero2;
-//
-// console.log(resultadoSuma);
-
-// ALERT
-// const numero1 = parseInt(prompt("Ingrese un numero"));
-// alert("Se ingresó el número 1");
-// const numero2 = parseInt(prompt("Ingrese otro numero"));
-//
-// const resultadoSuma = numero1 + numero2;
-//
-// alert("El resultado de la suma es: " + resultadoSuma);
-
-// DECIMALES CON PROMPT Y PARSE INT
-// const numero1 = parseFloat(prompt("Ingrese un numero"));
-// const numero2 = parseFloat(prompt("Ingrese otro número"));
-//
-// // Suma con decimales
-// const resultadoNumero = numero1 + numero2;
-// // Suma con enteros
-// const resultadoEntero = parseInt(numero1) + parseInt(numero2);
-//
-// console.log("Resultado con decimales: " + resultadoNumero);
-// console.log("Resultado con enteros: " + resultadoEntero);
+// ESTO ES UNA ESTRUCTURA CONDICIONAL APARTE DE LA DE ARRIBA ^
+// if (nombre == "Juan") {
+//     console.log("USTED ES JUAN");
+// } else {
+//     console.log("USTED NO ES JUAN");
+// }
 
 /**
- * EJERCICIOS
- *
- * 2) Escriba un programa en dónde el usuario ingrese el lado de un cuadrado y se
- * calcule el perímetro
+ * IF, ELSE IF
  */
 
-const ladoCuadrado = parseFloat(prompt("Ingrese el lado de un cuadrado"));
+// const nombre = prompt("Ingrese el nombre");
+//
+// if (nombre == "Pepe") {
+//     console.log("HOLA PEPE CÓMO ESTÁS?");
+// } else if (nombre == "Juan") {
+//     console.log("HOLA JUAN CÓMO ESTÁS?");
+// } else if (nombre == "Pedro") {
+//     console.log("HOLA PEDRO CÓMO ESTÁS?");
+// } else {
+//     console.log("USTED NO ES PEPE, NI JUAN NI PEDRO");
+// }
 
-const perimetroCuadrado = ladoCuadrado * 4;
+/**
+ * VALORES BOOLEANOS
+ */
 
-alert("El perímetro del cuadrado es: " + perimetroCuadrado);
+// const nombre = prompt("Ingrese el nombre");
+// const esPepe = (nombre == "Pepe");
+//
+// console.log(esPepe);
+//
+// if (esPepe) {
+//     console.log("HOLA PEPE CÓMO ESTÁS?");
+// } else {
+//     console.log("USTED NO ES PEPE");
+// }
+
+/**
+ * OPERADORES LÓGICOS
+ */
+
+// ES DISTINTO
+// const numero = 15;
+//
+// if (numero != 10) {
+//     console.log("El número es distinto de 10");
+// }
+
+// MAYOR, MENOR O IGUAL
+// const numero = 10;
+
+// if (numero > 5) {
+//     console.log("El numero es mayor a 5");
+// }
+//
+// if (numero < 20) {
+//     console.log("El numero es menor a 20");
+// }
+
+// if (numero >= 10) {
+//     console.log("El numero es mayor o igual a 10");
+// }
+//
+// if (numero <= 20) {
+//     console.log("El numero es menor o igual a 20");
+// }
+
+/**
+ * OPERADOR AND Y OR
+ */
+
+// AND
+// const nombre = prompt("Ingres el nombre");
+// const apellido = prompt("Ingrese el apellido");
+//
+// if ( (nombre == "Pepe") && (apellido == "Rodriguez") ) {
+//     console.log("Bienvenido Pepe Rodriguez");
+// }
+
+// OR
+// const nombre = prompt("Ingrese el nombre");
+//
+// if ( (nombre == "Pepe") || (nombre == "Juan") ) {
+//     console.log("Bienvenido Juan o Pepe");
+// }
+
+/**
+ * OPERADOR AND Y OR CONJUNTOS
+ */
+
+// OPERACIONES CONJUNTAS CON AND
+// const nombre = prompt("Ingrese un nombre");
+// const apellido = prompt("Ingrese un apellido");
+// const edad = parseInt(prompt("Ingrese la edad"));
+//
+// if (
+//     (nombre == "Pepe") &&
+//     (apellido == "Rodriguez") &&
+//     (edad >= 18)
+// ) {
+//     console.log("Bienvenido Pepe Rodriguez, que tiene más de 18");
+// }
+
+// OPERACIONES CONJUNTAS CON OR
+// const nombre = prompt("Ingrese un nombre");
+//
+// if (
+//     (nombre == "Juan") ||
+//     (nombre == "Pedro") ||
+//     (nombre == "Marcos")
+// ) {
+//     console.log("Bienvenido Juan, Pedro o Marcos");
+// }
+
+// COMBINAR AND Y OR
+// const nombre = prompt("Ingrese un nombre");
+// const edad = parseInt(prompt("Ingrese la edad"));
+
+// ESTE ESTA BIEN
+// if (
+//     ( (nombre == "Pepe") || (nombre == "Juan") ) &&
+//     ( edad >= 18 )
+// ) {
+//     console.log("Bienvenido Pepe o Juan, que tiene más de 18");
+// }
+
+// ESTE ESTA MAL!!!! CUIDADO CON LOS PARENTESIS
+// if (
+//     (nombre == "Pepe") ||
+//     ( (nombre == "Juan") && ( edad >= 18 ) )
+// ) {
+//     console.log("Bienvenido Pepe o Juan, que tiene más de 18");
+// }
+
+/**
+ * OPERADORES ESTRICTOS
+ */
+
+// IGUALES
+// const numero1 = "15";
+// const numero2 = "15";
+//
+// if (numero1 == numero2) {
+//     console.log("Son iguales");
+// }
+//
+// if (numero1 === numero2) {
+//     console.log("Son estrictamente iguales");
+// }
+
+// DISTINTOS
+// const numero1 = 15;
+// const numero2 = "15";
+//
+// if (numero1 != numero2) {
+//     console.log("Son distintos");
+// }
+//
+// if (numero1 !== numero2) {
+//     console.log("Son estrictamente distintos");
+// }
+
+/**
+ * OPERADOR NOT
+ */
+
+// const numero1 = 20;
+// const esNumero20 = (numero1 === 20);
+//
+// if (esNumero20) {
+//     console.log("El numero es 20");
+// }
+
+// ........
+// ....
+// .........
+
+// if (!esNumero20) {
+//     console.log("No es número 20");
+// }
+
+/**
+ * OPERADOR DE RESTO
+ */
+
+// const division = 5 % 2;
+//
+// console.log(division);
