@@ -1,244 +1,183 @@
 /**
- * CONDICIONALES FORZANDO LA CONDICIÓN A TRUE O FALSE
+ * FOR
  */
 
-// if (false) {
-//     const nombre = prompt("Ingrese el nombre");
-//
-//     console.log("HOLA");
-//     console.log("CÓMO ESTÁS?");
-//     console.log("BIENVENIDOS A JAVASCRIPT");
-// }
-//
-// if (true) {
-//     console.log("Hola 2");
-// }
-//
-// console.log("Fin del if");
-
-/**
- * OPERADOR DE EQUIVALENCIA
- */
-
-// ESTO ES VERDADERO
-// const anio = 2024;
-//
-// if (anio == 2024) {
-//     console.log("EL AÑO ES 2024");
+// for(let i = 0; i < 10; i++) {
+//     console.log(i);
 // }
 
-// ESTO ES FALSO
-// const anio = 2024;
-//
-// if (anio == 2025) {
-//     console.log("EL AÑO ES 2024");
+// for(let i = 0; i < 5; i++) {
+//     const nombre = prompt("Ingrese un nombre");
+//     console.log("Su nombre es: " + nombre);
 // }
 
-// COMPARACIÓN CON STRING
-// const nombre = prompt("Ingrese el nombre");
+// Sentencia Break
+
+// for(let i = 0; i < 5; i++) {
+//     const nombre = prompt("Ingrese un nombre");
 //
-// if(nombre == "Pepe") {
-//     console.log("HOLA PEPE CÓMO ESTÁS?");
-// }
-
-/**
- * IF - ELSE
- */
-
-// const nombre = prompt("Ingrese el nombre");
+//     if(nombre == "Matias") {
+//         console.log("Se ingresó Matías");
+//         break;
+//     }
 //
-// if (nombre == "Pepe") {
-//     console.log("HOLA PEPE CÓMO ESTÁS?");
-// } else {
-//     console.log("USTED NO ES PEPE");
+//     console.log("Su nombre es: " + nombre);
 // }
+//
+// console.log("Finalizó el for");
 
-// ESTO ES UNA ESTRUCTURA CONDICIONAL APARTE DE LA DE ARRIBA ^
-// if (nombre == "Juan") {
-//     console.log("USTED ES JUAN");
-// } else {
-//     console.log("USTED NO ES JUAN");
+// Sentencia continue
+// for(let i = 0; i < 5; i++) {
+//     const nombre = prompt("Ingrese un nombre");
+//
+//     if(nombre == "Juan" || nombre == "Pedro") {
+//         continue;
+//     }
+//
+//     console.log("Su nombre es: " + nombre);
+// }
+//
+// console.log("Finalizó el for");
+
+// Ciclo for mostrando pares
+// for(let i = 0; i <= 10; i = i + 2) {
+//     console.log(i);
 // }
 
 /**
- * IF, ELSE IF
+ * WHILE
  */
 
-// const nombre = prompt("Ingrese el nombre");
+// let nombre = prompt("Ingrese un nombre");
 //
-// if (nombre == "Pepe") {
-//     console.log("HOLA PEPE CÓMO ESTÁS?");
-// } else if (nombre == "Juan") {
-//     console.log("HOLA JUAN CÓMO ESTÁS?");
-// } else if (nombre == "Pedro") {
-//     console.log("HOLA PEDRO CÓMO ESTÁS?");
-// } else {
-//     console.log("USTED NO ES PEPE, NI JUAN NI PEDRO");
+// while(nombre != "SALIR") {
+//     console.log("Su nombre es: " + nombre);
+//
+//     nombre = prompt("Ingrese un nuevo nombre, o 'SALIR' para salir");
+// }
+//
+// console.log("Fin del ciclo");
+
+// Break y continue en while
+// let nombre = prompt("Ingrese un nombre");
+// let i = 0;
+//
+// while (nombre != "SALIR") {
+//     console.log("Su nombre es: " + nombre);
+//
+//     i++;
+//
+//     // Sentencia break
+//     // if(i == 3) {
+//     //     break;
+//     // }
+//
+//     // Sentencia continue
+//     // if(i % 2 == 0) {
+//     //     console.log("El i es par");
+//     //     continue;
+//     // }
+//
+//     nombre = prompt("Ingrese un nuevo nombre, o 'SALIR' para salir");
+// }
+//
+// console.log("Fin del ciclo");
+
+// Ejemplo de while
+// let opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
+//
+// while(opcion != 0) {
+//
+//     if(opcion == 1) {
+//         console.log("Atención al cliente");
+//     } else if(opcion == 2) {
+//         console.log("Soporte técnico");
+//     } else if(opcion == 3) {
+//         console.log("Ventas");
+//     } else {
+//         console.log("Opción inválida");
+//     }
+//
+//     opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
 // }
 
 /**
- * VALORES BOOLEANOS
+ * DO WHILE
  */
 
-// const nombre = prompt("Ingrese el nombre");
-// const esPepe = (nombre == "Pepe");
+// let nombre = prompt("Ingrese un nombre");
+
+// CON WHILE SE EVALÚA LA CONDICIÓN ANTES DE ENTRAR
+// while(nombre != "SALIR") {
+//     console.log("Su nombre es: " + nombre);
 //
-// console.log(esPepe);
-//
-// if (esPepe) {
-//     console.log("HOLA PEPE CÓMO ESTÁS?");
-// } else {
-//     console.log("USTED NO ES PEPE");
+//     nombre = prompt("Ingrese un nuevo nombre, o 'SALIR' para salir");
 // }
+
+// CON DO WHILE SE EVALÚA LA CONDICIÓN AL FINAL, POR LO TANTO LO QUE ESTÁ ADENTRO SE EJECUTA AL MENOS UNA VEZ
+// do {
+//     console.log("Su nombre es: " + nombre);
+//
+//     nombre = prompt("Ingrese un nuevo nombre, o 'SALIR' para salir");
+// } while(nombre != "SALIR");
 
 /**
- * OPERADORES LÓGICOS
+ * SWITCH
  */
 
-// ES DISTINTO
-// const numero = 15;
+// let opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
 //
-// if (numero != 10) {
-//     console.log("El número es distinto de 10");
-// }
-
-// MAYOR, MENOR O IGUAL
-// const numero = 10;
-
-// if (numero > 5) {
-//     console.log("El numero es mayor a 5");
-// }
+// while(opcion != 0) {
 //
-// if (numero < 20) {
-//     console.log("El numero es menor a 20");
-// }
-
-// if (numero >= 10) {
-//     console.log("El numero es mayor o igual a 10");
-// }
+//     // Evaluar opciones
+//     switch (opcion) {
+//         case 1:
+//             console.log("Atención al cliente");
+//             break;
 //
-// if (numero <= 20) {
-//     console.log("El numero es menor o igual a 20");
-// }
-
-/**
- * OPERADOR AND Y OR
- */
-
-// AND
-// const nombre = prompt("Ingres el nombre");
-// const apellido = prompt("Ingrese el apellido");
+//         case 2:
 //
-// if ( (nombre == "Pepe") && (apellido == "Rodriguez") ) {
-//     console.log("Bienvenido Pepe Rodriguez");
-// }
-
-// OR
-// const nombre = prompt("Ingrese el nombre");
+//             let opcionSoporteTecnico = parseInt(prompt("Ingrese la opción. 1- Soporte de internet, 2- Soporte de TV, 0- Volver al menu anterior"));
 //
-// if ( (nombre == "Pepe") || (nombre == "Juan") ) {
-//     console.log("Bienvenido Juan o Pepe");
-// }
-
-/**
- * OPERADOR AND Y OR CONJUNTOS
- */
-
-// OPERACIONES CONJUNTAS CON AND
-// const nombre = prompt("Ingrese un nombre");
-// const apellido = prompt("Ingrese un apellido");
-// const edad = parseInt(prompt("Ingrese la edad"));
+//             while (opcionSoporteTecnico != 0) {
 //
-// if (
-//     (nombre == "Pepe") &&
-//     (apellido == "Rodriguez") &&
-//     (edad >= 18)
-// ) {
-//     console.log("Bienvenido Pepe Rodriguez, que tiene más de 18");
-// }
-
-// OPERACIONES CONJUNTAS CON OR
-// const nombre = prompt("Ingrese un nombre");
+//                 // Opción #1 con IF
+//                 if(opcionSoporteTecnico == 1) {
+//                     console.log("Soporte de internet");
+//                 } else if(opcionSoporteTecnico == 2) {
+//                     console.log("Soporte de TV");
+//                 } else {
+//                     console.log("Opción inválida");
+//                 }
 //
-// if (
-//     (nombre == "Juan") ||
-//     (nombre == "Pedro") ||
-//     (nombre == "Marcos")
-// ) {
-//     console.log("Bienvenido Juan, Pedro o Marcos");
-// }
-
-// COMBINAR AND Y OR
-// const nombre = prompt("Ingrese un nombre");
-// const edad = parseInt(prompt("Ingrese la edad"));
-
-// ESTE ESTA BIEN
-// if (
-//     ( (nombre == "Pepe") || (nombre == "Juan") ) &&
-//     ( edad >= 18 )
-// ) {
-//     console.log("Bienvenido Pepe o Juan, que tiene más de 18");
-// }
-
-// ESTE ESTA MAL!!!! CUIDADO CON LOS PARENTESIS
-// if (
-//     (nombre == "Pepe") ||
-//     ( (nombre == "Juan") && ( edad >= 18 ) )
-// ) {
-//     console.log("Bienvenido Pepe o Juan, que tiene más de 18");
-// }
-
-/**
- * OPERADORES ESTRICTOS
- */
-
-// IGUALES
-// const numero1 = "15";
-// const numero2 = "15";
+//                 // Opción #2 con switch
+//                 // switch (opcionSoporteTecnico) {
+//                 //     case 1:
+//                 //         console.log("Soporte de internet");
+//                 //         break;
+//                 //
+//                 //     case 2:
+//                 //         console.log("Soporte de TV");
+//                 //         break;
+//                 //
+//                 //     default:
+//                 //         console.log("Opción inválida");
+//                 //         break;
+//                 // }
 //
-// if (numero1 == numero2) {
-//     console.log("Son iguales");
-// }
+//                 opcionSoporteTecnico = parseInt(prompt("Ingrese la opción. 1- Soporte de internet, 2- Soporte de TV, 0- Volver al menu anterior"));
+//             }
 //
-// if (numero1 === numero2) {
-//     console.log("Son estrictamente iguales");
-// }
-
-// DISTINTOS
-// const numero1 = 15;
-// const numero2 = "15";
+//             break;
 //
-// if (numero1 != numero2) {
-//     console.log("Son distintos");
-// }
+//         case 3:
+//             console.log("Ventas");
+//             break;
 //
-// if (numero1 !== numero2) {
-//     console.log("Son estrictamente distintos");
-// }
-
-/**
- * OPERADOR NOT
- */
-
-// const numero1 = 20;
-// const esNumero20 = (numero1 === 20);
+//         default:
+//             console.log("Opción inválida");
+//             break;
+//     }
 //
-// if (esNumero20) {
-//     console.log("El numero es 20");
+//     opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
 // }
-
-// ........
-// ....
-// .........
-
-// if (!esNumero20) {
-//     console.log("No es número 20");
-// }
-
-/**
- * OPERADOR DE RESTO
- */
-
-// const division = 5 % 2;
-//
-// console.log(division);
