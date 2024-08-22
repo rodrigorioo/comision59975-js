@@ -181,3 +181,53 @@
 //
 //     opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
 // }
+
+/**
+ * EJERCICIOS
+ */
+
+/*
+10) Escriba un programa en dónde se le solicite un número al usuario y determine si es un número primo o no.
+ */
+
+// const numero = parseInt(prompt("Ingrese un número al usuario"));
+// let contadorDivisores = 0;
+//
+// for(let i = 1; i <= numero; i++) {
+//
+//     // Si el número es divisible por i (Tiene resto 0)
+//     if (numero % i === 0) {
+//         // contadorDivisores = contadorDivisores + 1;
+//         contadorDivisores++;
+//     }
+// }
+//
+// // Si el número solo tiene 2 divisores
+// if (contadorDivisores === 2) {
+//     console.log("Es un número primo");
+// } else {
+//     console.log("No es un número primo");
+// }
+
+/*
+5) Realizar un programa en donde se le pida al usuario 2 números y realice su división
+mediante restas sucesivas (Ej.: El usuario ingresa los números 6 y 3, por lo cual la
+división sería: 6 - 3 - 3 y tendría que devolver 2).
+y 6)
+ */
+
+let numero1 = parseInt(prompt("Ingrese un número")); // 6
+let numero2 = parseInt(prompt("Ingrese otro número")); // 3
+
+let resultado = 0;
+
+while (numero1 >= numero2) {
+    numero1 = numero1 - numero2;
+    resultado++;
+}
+
+console.log("El resultado de la división es: " + resultado);
+console.log("El resto es: " + numero1);
+
+
+
