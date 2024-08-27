@@ -1,233 +1,203 @@
 /**
- * FOR
+ * CREAR FUNCIÓN
  */
-
-// for(let i = 0; i < 10; i++) {
+// function imprimirNombre() {
+//     const nombre = prompt("Ingrese un nombre");
+//     console.log("Hola! Su nombre es: " + nombre);
+// }
+//
+// // Llamamos a la función varias veces para pedir un nombre e imprimirlo en consola
+// imprimirNombre();
+//
+// console.log("Se inicia el programa");
+//
+// imprimirNombre();
+//
+// for(let i = 0; i < 5; i++) {
 //     console.log(i);
 // }
-
-// for(let i = 0; i < 5; i++) {
-//     const nombre = prompt("Ingrese un nombre");
-//     console.log("Su nombre es: " + nombre);
-// }
-
-// Sentencia Break
-
-// for(let i = 0; i < 5; i++) {
-//     const nombre = prompt("Ingrese un nombre");
 //
-//     if(nombre == "Matias") {
-//         console.log("Se ingresó Matías");
-//         break;
-//     }
+// imprimirNombre();
 //
-//     console.log("Su nombre es: " + nombre);
-// }
 //
-// console.log("Finalizó el for");
-
-// Sentencia continue
-// for(let i = 0; i < 5; i++) {
-//     const nombre = prompt("Ingrese un nombre");
-//
-//     if(nombre == "Juan" || nombre == "Pedro") {
-//         continue;
-//     }
-//
-//     console.log("Su nombre es: " + nombre);
-// }
-//
-// console.log("Finalizó el for");
-
-// Ciclo for mostrando pares
-// for(let i = 0; i <= 10; i = i + 2) {
-//     console.log(i);
-// }
+// imprimirNombre();
 
 /**
- * WHILE
+ * PARÁMETROS
  */
 
-// let nombre = prompt("Ingrese un nombre");
-//
-// while(nombre != "SALIR") {
-//     console.log("Su nombre es: " + nombre);
-//
-//     nombre = prompt("Ingrese un nuevo nombre, o 'SALIR' para salir");
+// function saludar(nombre) {
+//     console.log("Hola! Su nombre es: " + nombre);
 // }
 //
-// console.log("Fin del ciclo");
+// // saludar("Juan");
+// // saludar("Pedro");
+//
+// const nombreDePersona = prompt("Ingrese un nombre");
+//
+// saludar(nombreDePersona);
 
-// Break y continue en while
-// let nombre = prompt("Ingrese un nombre");
-// let i = 0;
-//
-// while (nombre != "SALIR") {
-//     console.log("Su nombre es: " + nombre);
-//
-//     i++;
-//
-//     // Sentencia break
-//     // if(i == 3) {
-//     //     break;
-//     // }
-//
-//     // Sentencia continue
-//     // if(i % 2 == 0) {
-//     //     console.log("El i es par");
-//     //     continue;
-//     // }
-//
-//     nombre = prompt("Ingrese un nuevo nombre, o 'SALIR' para salir");
-// }
-//
-// console.log("Fin del ciclo");
+/*
+EJEMPLO DE FUNCIÓN CON DOS PARÁMETROS
+ */
 
-// Ejemplo de while
-// let opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
-//
-// while(opcion != 0) {
-//
-//     if(opcion == 1) {
-//         console.log("Atención al cliente");
-//     } else if(opcion == 2) {
-//         console.log("Soporte técnico");
-//     } else if(opcion == 3) {
-//         console.log("Ventas");
-//     } else {
-//         console.log("Opción inválida");
-//     }
-//
-//     opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
+// function saludar(mensaje, nombre) {
+//     console.log(mensaje + " " + nombre);
 // }
+//
+// saludar("Hola! Tu nombre es:", "Rodrigo");
+// saludar("Hi! How are you?", "Mike");
+
+/*
+EJEMPLO DE FUNCIONES CON NUMEROS
+ */
+
+// function sumar(numero1, numero2) {
+//     const resultado = numero1 + numero2;
+//
+//     console.log("El resultado es: " + resultado);
+// }
+//
+// // Pedir numeros por prompt y enviarlos a la función
+// const numero1 = parseInt(prompt("Ingrese numero"));
+// const numero2 = parseInt(prompt("Ingrese otro numero"));
+//
+// sumar(numero1, numero2);
+
+// Llamar a la función con los números directamente
+// sumar(10, 5);
+// sumar(20, 10);
+// sumar(80, 20);
+
+// A los parámetros les puedo pasar cualquier tipo de valor ya que JavaScript no chequea el tipado de ellos
+// sumar("hola", "todo bien?");
 
 /**
- * DO WHILE
+ * RETURN
  */
 
-// let nombre = prompt("Ingrese un nombre");
-
-// CON WHILE SE EVALÚA LA CONDICIÓN ANTES DE ENTRAR
-// while(nombre != "SALIR") {
-//     console.log("Su nombre es: " + nombre);
-//
-//     nombre = prompt("Ingrese un nuevo nombre, o 'SALIR' para salir");
+// Ejemplo 1
+// function obtenerSaludo(mensaje, nombre) {
+//     return mensaje + " " + nombre;
 // }
-
-// CON DO WHILE SE EVALÚA LA CONDICIÓN AL FINAL, POR LO TANTO LO QUE ESTÁ ADENTRO SE EJECUTA AL MENOS UNA VEZ
-// do {
-//     console.log("Su nombre es: " + nombre);
 //
-//     nombre = prompt("Ingrese un nuevo nombre, o 'SALIR' para salir");
-// } while(nombre != "SALIR");
+// const saludo = obtenerSaludo("Hola! Que tal", "Miguel");
+//
+// console.log(saludo);
+
+// Ejemplo 2
+// function multiplicar(numero1, numero2) {
+//     const resultado = numero1 * numero2;
+//
+//     return resultado;
+// }
+//
+// function restar(numero1, numero2) {
+//     return numero1 - numero2;
+// }
+//
+// const resultadoMultiplicacion = multiplicar(5, 2);
+// const resultadoResta = restar(resultadoMultiplicacion, 3);
+//
+// console.log(resultadoResta);
 
 /**
- * SWITCH
+ * SCOPE
  */
 
-// let opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
+// let nombre = "Damian";
+// // let apellido = "Perez";
 //
-// while(opcion != 0) {
+// if (true) {
+//    nombre = "Pedro";
 //
-//     // Evaluar opciones
-//     switch (opcion) {
-//         case 1:
-//             console.log("Atención al cliente");
-//             break;
+//    // let apellido = "Rodriguez";
 //
-//         case 2:
-//
-//             let opcionSoporteTecnico = parseInt(prompt("Ingrese la opción. 1- Soporte de internet, 2- Soporte de TV, 0- Volver al menu anterior"));
-//
-//             while (opcionSoporteTecnico != 0) {
-//
-//                 // Opción #1 con IF
-//                 if(opcionSoporteTecnico == 1) {
-//                     console.log("Soporte de internet");
-//                 } else if(opcionSoporteTecnico == 2) {
-//                     console.log("Soporte de TV");
-//                 } else {
-//                     console.log("Opción inválida");
-//                 }
-//
-//                 // Opción #2 con switch
-//                 // switch (opcionSoporteTecnico) {
-//                 //     case 1:
-//                 //         console.log("Soporte de internet");
-//                 //         break;
-//                 //
-//                 //     case 2:
-//                 //         console.log("Soporte de TV");
-//                 //         break;
-//                 //
-//                 //     default:
-//                 //         console.log("Opción inválida");
-//                 //         break;
-//                 // }
-//
-//                 opcionSoporteTecnico = parseInt(prompt("Ingrese la opción. 1- Soporte de internet, 2- Soporte de TV, 0- Volver al menu anterior"));
-//             }
-//
-//             break;
-//
-//         case 3:
-//             console.log("Ventas");
-//             break;
-//
-//         default:
-//             console.log("Opción inválida");
-//             break;
-//     }
-//
-//     opcion = parseInt(prompt("Ingrese la opción. 1- Atención al cliente, 2- Soporte técnico, 3- Ventas, 0- Salir"));
+//    if (true) {
+//        // let apellido = "Gonzalez";
+//        console.log(apellido);
+//    }
 // }
+//
+// console.log(nombre + " " + apellido);
+
+/**
+ * FUNCIONES ANÓNIMAS
+ */
+
+// const multiplicar = function(numero1, numero2) {
+//     return numero1 * numero2;
+// }
+//
+// const numero1 = parseInt(prompt("Ingrese el número"));
+// const numero2 = parseInt(prompt("Ingrese otro número"));
+//
+// const resultadoMultiplicacion = multiplicar(numero1, numero2);
+// console.log(resultadoMultiplicacion);
+
+// const saludar = function(nombre) {
+//     return "Hola como estás " + nombre;
+// }
+//
+// const saludo = saludar("Pepe");
+// console.log(saludo);
+
+/**
+ * FUNCION FLECHA
+ */
+
+// Declaración típica de función
+// const multiplicar = function (numero1, numero2) {
+//     return numero1 * numero2;
+// }
+
+// Declaración con función flecha
+// const multiplicar = (numero1, numero2) => numero1 * numero2;
+//
+// const resultadoMultiplicacion = multiplicar(30, 3);
+//
+// console.log(resultadoMultiplicacion);
+
+// Función flecha sin return implícito
+// const saludar = (nombre) => {
+//     console.log("Hola como estás");
+//     console.log("Mi nombre es: " + nombre);
+// }
+//
+// saludar("Pepe");
 
 /**
  * EJERCICIOS
  */
 
 /*
-10) Escriba un programa en dónde se le solicite un número al usuario y determine si es un número primo o no.
+7) Escribir una función que reciba 4 números como parámetros y devuelva su
+promedio.
  */
 
-// const numero = parseInt(prompt("Ingrese un número al usuario"));
-// let contadorDivisores = 0;
+// Funciones
+// function promedio(
+//     nota1,
+//     nota2,
+//     nota3,
+//     nota4,
+// ) {
+//     const promedio = (nota1 + nota2 + nota3 + nota4) / 4;
 //
-// for(let i = 1; i <= numero; i++) {
-//
-//     // Si el número es divisible por i (Tiene resto 0)
-//     if (numero % i === 0) {
-//         // contadorDivisores = contadorDivisores + 1;
-//         contadorDivisores++;
-//     }
+//     return promedio;
 // }
 //
-// // Si el número solo tiene 2 divisores
-// if (contadorDivisores === 2) {
-//     console.log("Es un número primo");
-// } else {
-//     console.log("No es un número primo");
-// }
-
-/*
-5) Realizar un programa en donde se le pida al usuario 2 números y realice su división
-mediante restas sucesivas (Ej.: El usuario ingresa los números 6 y 3, por lo cual la
-división sería: 6 - 3 - 3 y tendría que devolver 2).
-y 6)
- */
-
-let numero1 = parseInt(prompt("Ingrese un número")); // 6
-let numero2 = parseInt(prompt("Ingrese otro número")); // 3
-
-let resultado = 0;
-
-while (numero1 >= numero2) {
-    numero1 = numero1 - numero2;
-    resultado++;
-}
-
-console.log("El resultado de la división es: " + resultado);
-console.log("El resto es: " + numero1);
-
-
-
+// // Inicio del programa
+// const nota1 = parseInt(prompt("Ingrese la nota 1"));
+// const nota2 = parseInt(prompt("Ingrese la nota 2"));
+// const nota3 = parseInt(prompt("Ingrese la nota 3"));
+// const nota4 = parseInt(prompt("Ingrese la nota 4"));
+//
+// const calculoPromedio = promedio(
+//     nota1,
+//     nota2,
+//     nota3,
+//     nota4,
+// );
+//
+// console.log("Su promedio es: " + calculoPromedio);
