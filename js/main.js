@@ -1,203 +1,105 @@
-/**
- * CREAR FUNCIÓN
- */
-// function imprimirNombre() {
-//     const nombre = prompt("Ingrese un nombre");
-//     console.log("Hola! Su nombre es: " + nombre);
-// }
-//
-// // Llamamos a la función varias veces para pedir un nombre e imprimirlo en consola
-// imprimirNombre();
-//
-// console.log("Se inicia el programa");
-//
-// imprimirNombre();
-//
-// for(let i = 0; i < 5; i++) {
-//     console.log(i);
-// }
-//
-// imprimirNombre();
-//
-//
-// imprimirNombre();
-
-/**
- * PARÁMETROS
- */
-
-// function saludar(nombre) {
-//     console.log("Hola! Su nombre es: " + nombre);
-// }
-//
-// // saludar("Juan");
-// // saludar("Pedro");
-//
-// const nombreDePersona = prompt("Ingrese un nombre");
-//
-// saludar(nombreDePersona);
-
 /*
-EJEMPLO DE FUNCIÓN CON DOS PARÁMETROS
- */
+EJEMPLO DE PREENTREGA
 
-// function saludar(mensaje, nombre) {
-//     console.log(mensaje + " " + nombre);
-// }
-//
-// saludar("Hola! Tu nombre es:", "Rodrigo");
-// saludar("Hi! How are you?", "Mike");
-
-/*
-EJEMPLO DE FUNCIONES CON NUMEROS
- */
-
-// function sumar(numero1, numero2) {
-//     const resultado = numero1 + numero2;
-//
-//     console.log("El resultado es: " + resultado);
-// }
-//
-// // Pedir numeros por prompt y enviarlos a la función
-// const numero1 = parseInt(prompt("Ingrese numero"));
-// const numero2 = parseInt(prompt("Ingrese otro numero"));
-//
-// sumar(numero1, numero2);
-
-// Llamar a la función con los números directamente
-// sumar(10, 5);
-// sumar(20, 10);
-// sumar(80, 20);
-
-// A los parámetros les puedo pasar cualquier tipo de valor ya que JavaScript no chequea el tipado de ellos
-// sumar("hola", "todo bien?");
-
-/**
- * RETURN
- */
-
-// Ejemplo 1
-// function obtenerSaludo(mensaje, nombre) {
-//     return mensaje + " " + nombre;
-// }
-//
-// const saludo = obtenerSaludo("Hola! Que tal", "Miguel");
-//
-// console.log(saludo);
-
-// Ejemplo 2
-// function multiplicar(numero1, numero2) {
-//     const resultado = numero1 * numero2;
-//
-//     return resultado;
-// }
-//
-// function restar(numero1, numero2) {
-//     return numero1 - numero2;
-// }
-//
-// const resultadoMultiplicacion = multiplicar(5, 2);
-// const resultadoResta = restar(resultadoMultiplicacion, 3);
-//
-// console.log(resultadoResta);
-
-/**
- * SCOPE
- */
-
-// let nombre = "Damian";
-// // let apellido = "Perez";
-//
-// if (true) {
-//    nombre = "Pedro";
-//
-//    // let apellido = "Rodriguez";
-//
-//    if (true) {
-//        // let apellido = "Gonzalez";
-//        console.log(apellido);
-//    }
-// }
-//
-// console.log(nombre + " " + apellido);
-
-/**
- * FUNCIONES ANÓNIMAS
- */
-
-// const multiplicar = function(numero1, numero2) {
-//     return numero1 * numero2;
-// }
-//
-// const numero1 = parseInt(prompt("Ingrese el número"));
-// const numero2 = parseInt(prompt("Ingrese otro número"));
-//
-// const resultadoMultiplicacion = multiplicar(numero1, numero2);
-// console.log(resultadoMultiplicacion);
-
-// const saludar = function(nombre) {
-//     return "Hola como estás " + nombre;
-// }
-//
-// const saludo = saludar("Pepe");
-// console.log(saludo);
-
-/**
- * FUNCION FLECHA
- */
-
-// Declaración típica de función
-// const multiplicar = function (numero1, numero2) {
-//     return numero1 * numero2;
-// }
-
-// Declaración con función flecha
-// const multiplicar = (numero1, numero2) => numero1 * numero2;
-//
-// const resultadoMultiplicacion = multiplicar(30, 3);
-//
-// console.log(resultadoMultiplicacion);
-
-// Función flecha sin return implícito
-// const saludar = (nombre) => {
-//     console.log("Hola como estás");
-//     console.log("Mi nombre es: " + nombre);
-// }
-//
-// saludar("Pepe");
-
-/**
- * EJERCICIOS
- */
-
-/*
-7) Escribir una función que reciba 4 números como parámetros y devuelva su
-promedio.
+AL MENOS UN CONDICIONAL - ✅
+AL MENOS UN CICLO - ✅
+AL MENOS UNA FUNCIÓN - ✅
  */
 
 // Funciones
-// function promedio(
-//     nota1,
-//     nota2,
-//     nota3,
-//     nota4,
-// ) {
-//     const promedio = (nota1 + nota2 + nota3 + nota4) / 4;
+// function obtenerPrecioDelProducto() {
+//     let precioProducto = parseFloat(prompt("Ingrese el precio del producto"));
 //
-//     return promedio;
+//     // Mientras el precio del producto sea menor o igual a cero
+//     while(precioProducto <= 0) {
+//         alert("PRECIO DEL PRODUCTO INVÁLIDO, VUELVA A INGRESAR OTRO");
+//
+//         precioProducto = parseFloat(prompt("Ingrese el precio del producto"));
+//     }
+//
+//     return precioProducto;
 // }
+
 //
 // // Inicio del programa
-// const nota1 = parseInt(prompt("Ingrese la nota 1"));
-// const nota2 = parseInt(prompt("Ingrese la nota 2"));
-// const nota3 = parseInt(prompt("Ingrese la nota 3"));
-// const nota4 = parseInt(prompt("Ingrese la nota 4"));
+// let nombreProducto = prompt("Ingrese el nombre de un producto - ESCRIBA EXIT PARA SALIR DEL PROGRAMA");
+// let listaDeProductos = "";
+// let totalProductos = 0;
 //
-// const calculoPromedio = promedio(
-//     nota1,
-//     nota2,
-//     nota3,
-//     nota4,
-// );
+// while(nombreProducto !== "EXIT") {
 //
-// console.log("Su promedio es: " + calculoPromedio);
+//     // Pedimos y validamos precio del producto
+//     const precioProducto = obtenerPrecioDelProducto();
+//
+//     // Sumar el precio del producto al total
+//     totalProductos = totalProductos + precioProducto;
+//
+//     if(listaDeProductos !== '') {
+//         listaDeProductos = listaDeProductos + " - ";
+//     }
+//
+//     listaDeProductos = listaDeProductos + nombreProducto;
+//
+//     // Volvemos a pedir nombre del producto
+//     nombreProducto = prompt("Ingrese el nombre de un producto - ESCRIBA EXIT PARA SALIR DEL PROGRAMA");
+// }
+//
+// console.log("Total de productos: $" + totalProductos);
+// console.log("Lista de productos: " + listaDeProductos);
+
+/**
+ * EJERCICIOS CICLOS
+ * 5) Realizar un programa en donde se le pida al usuario 2 números y realice su división mediante restas sucesivas (Ej.: El usuario ingresa los números 6 y 3, por lo cual la división sería: 6 - 3 - 3 y tendría que devolver 2).
+ */
+
+// let numero1 = parseInt(prompt("Ingrese un número"));
+// const numero2 = parseInt(prompt("Ingrese otro número"));
+// let resultado = 0;
+//
+// while (numero1 >= numero2) {
+//     numero1 = numero1 - numero2;
+//     resultado++;
+// }
+//
+// console.log("El resultado de la división: " + resultado);
+
+/**
+ * 9) Realice un programa en donde se le solicite un número al usuario y le muestre en pantalla cuántos dígitos tiene. (Ej: Si ingreso 27, tiene que mostrarme 2. Si ingreso 115 me tiene que mostrar 3).
+ *  AYUDA: Dividir por 10 a un número le remueve un dígito.
+ */
+
+// let numero = parseInt(prompt("Ingrese un número"));
+// let cantidadDeDigitos = 0;
+//
+// while (numero > 0) {
+//     numero = parseInt(numero / 10);
+//
+//     cantidadDeDigitos++;
+// }
+//
+// console.log("La cantidad de digitos es: " + cantidadDeDigitos);
+
+/**
+ * EJERCICIOS FUNCIONES
+ *
+ * 10) Escribir una función que le pida al usuario un número entero entre 1 y 20 y devuelva el número que ingresó. Se necesita validar que el número sea entre 1 y 20, por lo que si el usuario ingresa un número erróneo se le tiene que volver a pedir hasta que ingrese un número correcto.
+ */
+
+// Funciones
+function obtenerNumero () {
+    let numero = parseFloat(prompt("Ingrese un número"));
+
+    while(numero < 1 || numero > 20) {
+        alert("El número tiene que estar entre 1 y 20");
+
+        numero = parseFloat(prompt("Ingrese un número"));
+    }
+
+    return numero;
+}
+
+// Inicio del programa
+const numeroIngresado = obtenerNumero();
+
+console.log("El número que ingresó el usuario es: " + numeroIngresado);
+
