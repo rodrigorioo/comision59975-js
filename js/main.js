@@ -1,105 +1,292 @@
 /*
-EJEMPLO DE PREENTREGA
-
-AL MENOS UN CONDICIONAL - ✅
-AL MENOS UN CICLO - ✅
-AL MENOS UNA FUNCIÓN - ✅
+    CREAR OBJETO PERSONA QUE CONTENGA LAS 3 PROPIEDADES
  */
 
-// Funciones
-// function obtenerPrecioDelProducto() {
-//     let precioProducto = parseFloat(prompt("Ingrese el precio del producto"));
+// const nombre = "Pepe";
+// const apellido = "Rodriguez";
+// const edad = 30;
+
+// ...
+// ...
+
+// const persona = {
+//     nombre: "Pepe",
+//     apellido: "Rodriguez",
+//     edad: 30,
+// }
+
+// console.log(persona);
+// console.log("Nombre: " + persona.nombre + " - Apellido: " + persona.apellido);
+
+/*
+    ACCEDER A PROPIEDADES DEL OBJETO
+ */
+
+// console.log(persona.apellido);
+// console.log(persona["edad"]);
+
+// ACCEDER PROPIEDADES QUE NO EXISTEN
+// console.log(persona.jwqkejkqwejk);
+// console.log(persona["jkwekjqwekjqwkj"]);
+
+/*
+    MODIFICAR PROPIEDADES DE UN OBJETO
+ */
+
+// const persona = {
+//     nombre: "Pepe",
+//     apellido: "Rodriguez",
+//     edad: 30,
+// }
 //
-//     // Mientras el precio del producto sea menor o igual a cero
-//     while(precioProducto <= 0) {
-//         alert("PRECIO DEL PRODUCTO INVÁLIDO, VUELVA A INGRESAR OTRO");
+// persona.edad = 31;
+// persona.edad++;
 //
-//         precioProducto = parseFloat(prompt("Ingrese el precio del producto"));
+// persona.nombre = "Gonzalo";
+
+// console.log(persona.edad);
+// console.log(persona.nombre);
+
+// console.log(persona);
+
+/*
+    CREAR OBJETOS CON PROMPTS
+ */
+
+// Forma 1
+// const producto = {
+//     nombre: "",
+//     precio: 0,
+//     stock: 0,
+// }
+//
+// const nombreProducto = prompt("Ingrese nombre de producto");
+// const precioProducto = parseFloat(prompt("Ingrese precio"));
+// const stockProducto = parseInt(prompt("Ingrese stock"));
+//
+// producto.nombre = nombreProducto;
+// producto.precio = precioProducto;
+// producto.stock = stockProducto;
+
+// Forma 2
+
+// const nombreProducto = prompt("Ingrese nombre de producto");
+// const precioProducto = parseFloat(prompt("Ingrese precio"));
+// const stockProducto = parseInt(prompt("Ingrese stock"));
+//
+// const producto = {
+//     nombre: nombreProducto,
+//     precio: precioProducto,
+//     stock: stockProducto,
+// }
+//
+// console.log(producto);
+
+/**
+ * CONSTRUCTORES
+ */
+
+// const persona1 = {
+//     nombre: "Pepe",
+//     apellido: "Gonzalez",
+//     edad: 30,
+// }
+//
+// const persona2 = {
+//     nombre: "Gonzalo",
+//     apellido: "Rodriguez",
+//     edad: 40,
+// }
+//
+// const persona3 = {
+//     // ...
+// }
+
+// function Persona (nombre, apellido, edad) {
+//     this.nombre = nombre;
+//     this.apellido = apellido;
+//     this.edad = edad;
+// }
+
+// const persona1 = new Persona("Pepe", "Gonzalez", 30);
+// const persona2 = new Persona("Gonzalo", "Rodriguez", 40);
+// const persona3 = new Persona("Juan", "Ramirez", 50);
+//
+// console.log(persona1);
+// console.log(persona2);
+// console.log(persona3);
+
+// Creo objeto dónde la propiedad edad es undefined porque no le paso ningún valor
+// const persona4 = new Persona("Pepe", "Gonzalez");
+//
+// console.log(persona4);
+
+/**
+ * MÉTODOS
+ */
+
+// function Persona (nombre, apellido, edad) {
+//     this.nombre = nombre;
+//     this.apellido = apellido;
+//     this.edad = edad;
+//
+//     this.saludar = function(nombre) {
+//         console.log("Hola!" + nombre);
 //     }
-//
-//     return precioProducto;
-// }
-
-//
-// // Inicio del programa
-// let nombreProducto = prompt("Ingrese el nombre de un producto - ESCRIBA EXIT PARA SALIR DEL PROGRAMA");
-// let listaDeProductos = "";
-// let totalProductos = 0;
-//
-// while(nombreProducto !== "EXIT") {
-//
-//     // Pedimos y validamos precio del producto
-//     const precioProducto = obtenerPrecioDelProducto();
-//
-//     // Sumar el precio del producto al total
-//     totalProductos = totalProductos + precioProducto;
-//
-//     if(listaDeProductos !== '') {
-//         listaDeProductos = listaDeProductos + " - ";
-//     }
-//
-//     listaDeProductos = listaDeProductos + nombreProducto;
-//
-//     // Volvemos a pedir nombre del producto
-//     nombreProducto = prompt("Ingrese el nombre de un producto - ESCRIBA EXIT PARA SALIR DEL PROGRAMA");
 // }
 //
-// console.log("Total de productos: $" + totalProductos);
-// console.log("Lista de productos: " + listaDeProductos);
+// const persona1 = new Persona("Pepe", "Gonzalez", 32);
+//
+// // console.log(persona1);
+// persona1.saludar("Lautaro");
 
-/**
- * EJERCICIOS CICLOS
- * 5) Realizar un programa en donde se le pida al usuario 2 números y realice su división mediante restas sucesivas (Ej.: El usuario ingresa los números 6 y 3, por lo cual la división sería: 6 - 3 - 3 y tendría que devolver 2).
+/*
+    OBJETO STRING
  */
 
-// let numero1 = parseInt(prompt("Ingrese un número"));
-// const numero2 = parseInt(prompt("Ingrese otro número"));
-// let resultado = 0;
+// const nombre = "Hola Pepe";
+
+// console.log(typeof nombre);
+
+// Utilizar propiedades y métodos de los strings
+// console.log(nombre.length);
+// console.log(nombre.toUpperCase());
+// console.log(nombre.toLowerCase());
+// console.log(nombre);
+
+// const nuevoString = nombre.concat(" ¿Cómo estás?");
+// console.log(nuevoString);
+
+// Objeto número
+// const numero = 5;
 //
-// while (numero1 >= numero2) {
-//     numero1 = numero1 - numero2;
-//     resultado++;
-// }
-//
-// console.log("El resultado de la división: " + resultado);
+// console.log(typeof numero);
 
 /**
- * 9) Realice un programa en donde se le solicite un número al usuario y le muestre en pantalla cuántos dígitos tiene. (Ej: Si ingreso 27, tiene que mostrarme 2. Si ingreso 115 me tiene que mostrar 3).
- *  AYUDA: Dividir por 10 a un número le remueve un dígito.
+ * OPERADOR IN Y FOR IN
  */
 
-// let numero = parseInt(prompt("Ingrese un número"));
-// let cantidadDeDigitos = 0;
-//
-// while (numero > 0) {
-//     numero = parseInt(numero / 10);
-//
-//     cantidadDeDigitos++;
+// const persona = {
+//     nombre: "Pepe",
+//     edad: 20,
+//     apellido: "Gonzalez",
+//     profesion: "Programador",
 // }
 //
-// console.log("La cantidad de digitos es: " + cantidadDeDigitos);
+// // console.log("jkqwekjqwekj" in persona);
+//
+// for(const nombrePropiedad in persona) {
+//     console.log("Propiedad: " + nombrePropiedad + " - Valor: " + persona[nombrePropiedad]);
+// }
 
 /**
- * EJERCICIOS FUNCIONES
- *
- * 10) Escribir una función que le pida al usuario un número entero entre 1 y 20 y devuelva el número que ingresó. Se necesita validar que el número sea entre 1 y 20, por lo que si el usuario ingresa un número erróneo se le tiene que volver a pedir hasta que ingrese un número correcto.
+ * CLASES
  */
 
-// Funciones
-function obtenerNumero () {
-    let numero = parseFloat(prompt("Ingrese un número"));
+/*
+function Persona (nombre, apellido, edad) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
 
-    while(numero < 1 || numero > 20) {
-        alert("El número tiene que estar entre 1 y 20");
-
-        numero = parseFloat(prompt("Ingrese un número"));
+    this.saludar = function(nombre) {
+        console.log("Hola!" + nombre);
     }
-
-    return numero;
 }
+ */
 
-// Inicio del programa
-const numeroIngresado = obtenerNumero();
+// class Persona {
+//     constructor (nombre, apellido, edad) {
+//         this.nombre = nombre;
+//         this.apellido = apellido;
+//         this.edad = edad;
+//     }
+//
+//     saludar() {
+//         console.log("Hola! " + this.nombre);
+//     }
+//
+//     cambiarNombre(nombre) {
+//         this.nombre = nombre;
+//     }
+// }
+//
+// const persona1 = new Persona("Pepe", "Gonzalez", 40);
+// const persona2 = new Persona("Lautaro", "Rodriguez", 35);
+//
+// console.log(persona1);
+// console.log(persona2);
+//
+// persona1.cambiarNombre("Martin");
+// persona1.saludar();
+//
+// persona2.saludar();
 
-console.log("El número que ingresó el usuario es: " + numeroIngresado);
+/*
+    CLASE PRODUCTO
+ */
+// class Producto {
+//
+//     constructor(nombre, precio, cantidad) {
+//         this.nombre = nombre;
+//         this.precio = precio;
+//         this.cantidad = cantidad;
+//         this.stock = 5;
+//     }
+//
+//     descontarStock() {
+//         this.stock--;
+//     }
+//
+//     sumarStock() {
+//         this.stock++;
+//     }
+//
+//     devolverSubtotal() {
+//         return this.cantidad * this.precio;
+//     }
+//
+//     total() {
+//         return this.devolverSubtotal() * 1.21;
+//     }
+// }
+//
+// const producto = new Producto("Jabon", 50, 3);
+//
+// // ...
+// // ...
+//
+// producto.descontarStock();
+//
+// const subtotal = producto.devolverSubtotal();
+// console.log(subtotal);
+//
+// const total = producto.total();
+// console.log(total);
 
+/**
+ * VALORES POR REFERENCIA
+ */
+
+// Copiar valores en variables
+// let numero1 = 10;
+// let numero2 = numero1;
+//
+// numero1 = 20;
+//
+// console.log(numero1); // 20
+// console.log(numero2); // 10
+
+// Con los objetos...
+let persona1 = {
+    nombre: "Gonzalo",
+    edad: 30,
+}
+let persona2 = persona1;
+
+persona1.nombre = "Pepe";
+
+persona2.nombre = "Lautaro";
+
+console.log(persona1.nombre); // "Pepe"
+console.log(persona2.nombre); // "Pepe"
