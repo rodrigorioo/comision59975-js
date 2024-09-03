@@ -1,292 +1,351 @@
-/*
-    CREAR OBJETO PERSONA QUE CONTENGA LAS 3 PROPIEDADES
+/**
+ * DECLARAR ARRAY
  */
 
-// const nombre = "Pepe";
-// const apellido = "Rodriguez";
-// const edad = 30;
+// const nombres = ["Pedro", "Juan", "Mariano"];
+//
+// const segundoNombre = nombres[1];
+//
+// const saludo = "Hola " + segundoNombre + " cómo estás";
+//
+// console.log(saludo);
 
-// ...
-// ...
+/**
+ * RECORRER LISTA
+ */
 
-// const persona = {
-//     nombre: "Pepe",
-//     apellido: "Rodriguez",
-//     edad: 30,
+// const nombresDeProductos = [
+//     'Yogurt',
+//     'Leche',
+//     'Manteca',
+//     'Lechuga',
+//     'Tomate',
+//     'Papa',
+// ];
+//
+// for(let i = 0; i < nombresDeProductos.length; i++) {
+//     console.log(nombresDeProductos[i]);
 // }
 
-// console.log(persona);
-// console.log("Nombre: " + persona.nombre + " - Apellido: " + persona.apellido);
-
-/*
-    ACCEDER A PROPIEDADES DEL OBJETO
+/**
+ * AGREGAR ELEMENTOS A LA LISTA
  */
 
-// console.log(persona.apellido);
-// console.log(persona["edad"]);
-
-// ACCEDER PROPIEDADES QUE NO EXISTEN
-// console.log(persona.jwqkejkqwejk);
-// console.log(persona["jkwekjqwekjqwkj"]);
-
-/*
-    MODIFICAR PROPIEDADES DE UN OBJETO
- */
-
-// const persona = {
-//     nombre: "Pepe",
-//     apellido: "Rodriguez",
-//     edad: 30,
-// }
-//
-// persona.edad = 31;
-// persona.edad++;
-//
-// persona.nombre = "Gonzalo";
-
-// console.log(persona.edad);
-// console.log(persona.nombre);
-
-// console.log(persona);
-
-/*
-    CREAR OBJETOS CON PROMPTS
- */
+// const nombres = ["Juan", "Pedro"];
 
 // Forma 1
-// const producto = {
-//     nombre: "",
-//     precio: 0,
-//     stock: 0,
-// }
-//
-// const nombreProducto = prompt("Ingrese nombre de producto");
-// const precioProducto = parseFloat(prompt("Ingrese precio"));
-// const stockProducto = parseInt(prompt("Ingrese stock"));
-//
-// producto.nombre = nombreProducto;
-// producto.precio = precioProducto;
-// producto.stock = stockProducto;
+// nombres.push("Mariano");
+// nombres.push("Pepe");
 
-// Forma 2
+// Forma 2 - Varios elementos a la vez
+// nombres.push("Mariano", "Pepe");
 
-// const nombreProducto = prompt("Ingrese nombre de producto");
-// const precioProducto = parseFloat(prompt("Ingrese precio"));
-// const stockProducto = parseInt(prompt("Ingrese stock"));
+// nombres.unshift("Andres");
 //
-// const producto = {
-//     nombre: nombreProducto,
-//     precio: precioProducto,
-//     stock: stockProducto,
-// }
-//
-// console.log(producto);
+// console.log(nombres);
 
 /**
- * CONSTRUCTORES
+ * ELIMINAR ELEMENTOS DEL ARRAY
  */
 
-// const persona1 = {
-//     nombre: "Pepe",
-//     apellido: "Gonzalez",
-//     edad: 30,
-// }
+// const productos = [
+//     'Leche',
+//     'Tomates',
+//     'Papa',
+//     'Crema',
+// ];
 //
-// const persona2 = {
-//     nombre: "Gonzalo",
-//     apellido: "Rodriguez",
-//     edad: 40,
-// }
+// // Elimina al final
+// productos.pop();
 //
-// const persona3 = {
-//     // ...
-// }
-
-// function Persona (nombre, apellido, edad) {
-//     this.nombre = nombre;
-//     this.apellido = apellido;
-//     this.edad = edad;
-// }
-
-// const persona1 = new Persona("Pepe", "Gonzalez", 30);
-// const persona2 = new Persona("Gonzalo", "Rodriguez", 40);
-// const persona3 = new Persona("Juan", "Ramirez", 50);
+// // Elimina al principio
+// productos.shift();
 //
-// console.log(persona1);
-// console.log(persona2);
-// console.log(persona3);
-
-// Creo objeto dónde la propiedad edad es undefined porque no le paso ningún valor
-// const persona4 = new Persona("Pepe", "Gonzalez");
-//
-// console.log(persona4);
+// console.log(productos);
 
 /**
- * MÉTODOS
+ * SPLICE
  */
 
-// function Persona (nombre, apellido, edad) {
-//     this.nombre = nombre;
-//     this.apellido = apellido;
-//     this.edad = edad;
-//
-//     this.saludar = function(nombre) {
-//         console.log("Hola!" + nombre);
-//     }
-// }
-//
-// const persona1 = new Persona("Pepe", "Gonzalez", 32);
-//
-// // console.log(persona1);
-// persona1.saludar("Lautaro");
+// const productos = [
+//     'Leche',
+//     'Tomates',
+//     'Papa',
+//     'Crema',
+//     'Jabon',
+// ];
 
-/*
-    OBJETO STRING
- */
+// Eliminar elementos del medio
+// productos.splice(1, 3);
 
-// const nombre = "Hola Pepe";
+// Eliminar desde el índice en adelante
+// productos.splice(2);
 
-// console.log(typeof nombre);
+// Eliminar los 2 primeros elementos
+// productos.splice(0, 2);
 
-// Utilizar propiedades y métodos de los strings
-// console.log(nombre.length);
-// console.log(nombre.toUpperCase());
-// console.log(nombre.toLowerCase());
-// console.log(nombre);
+// Esto no elimina nada
+// productos.splice(1, 0);
 
-// const nuevoString = nombre.concat(" ¿Cómo estás?");
-// console.log(nuevoString);
+// El método splice me devuelve un nuevo array con los elementos eliminados
+// const eliminados = productos.splice(1, 2);
 
-// Objeto número
-// const numero = 5;
-//
-// console.log(typeof numero);
+// console.log(productos);
 
 /**
- * OPERADOR IN Y FOR IN
+ * JOIN
  */
 
-// const persona = {
-//     nombre: "Pepe",
-//     edad: 20,
-//     apellido: "Gonzalez",
-//     profesion: "Programador",
-// }
+// const productos = [
+//     'Leche',
+//     'Tomates',
+//     'Papa',
+//     'Crema',
+//     'Jabon',
+// ];
 //
-// // console.log("jkqwekjqwekj" in persona);
+// const listaDeProductos = productos.join("___");
 //
-// for(const nombrePropiedad in persona) {
-//     console.log("Propiedad: " + nombrePropiedad + " - Valor: " + persona[nombrePropiedad]);
-// }
+// console.log(listaDeProductos);
 
 /**
- * CLASES
+ * CONCAT
  */
 
-/*
-function Persona (nombre, apellido, edad) {
-    this.nombre = nombre;
-    this.apellido = apellido;
-    this.edad = edad;
+// const productos1 = [
+//     "Tomates",
+//     "Leche",
+// ];
+// const productos2 = [
+//     "Jabon",
+//     "Papa",
+// ];
 
-    this.saludar = function(nombre) {
-        console.log("Hola!" + nombre);
-    }
-}
- */
-
-// class Persona {
-//     constructor (nombre, apellido, edad) {
-//         this.nombre = nombre;
-//         this.apellido = apellido;
-//         this.edad = edad;
-//     }
-//
-//     saludar() {
-//         console.log("Hola! " + this.nombre);
-//     }
-//
-//     cambiarNombre(nombre) {
-//         this.nombre = nombre;
-//     }
+// Forma 1
+// for(let i = 0; i < productos2.length; i++) {
+//     productos1.push(productos2[i]);
 // }
-//
-// const persona1 = new Persona("Pepe", "Gonzalez", 40);
-// const persona2 = new Persona("Lautaro", "Rodriguez", 35);
-//
-// console.log(persona1);
-// console.log(persona2);
-//
-// persona1.cambiarNombre("Martin");
-// persona1.saludar();
-//
-// persona2.saludar();
 
-/*
-    CLASE PRODUCTO
+// Forma 2 con concat
+// const productos = productos1.concat(productos2);
+
+// console.log(productos1);
+// console.log(productos2);
+
+// console.log(productos);
+
+/**
+ * SLICE
  */
+
+// const productos = [
+//     'Leche',
+//     'Tomates',
+//     'Papa',
+//     'Crema',
+//     'Jabon',
+// ];
+
+// const productosDelMedio = productos.slice(1, 4);
+
+// Esto copia desde el índice hasta el final
+// const productosDelMedio = productos.slice(1);
+
+// Esto no copia nada, ya que el segundo índice tiene que ser mayor al primero
+// const productosDelMedio = productos.slice(2, 0);
+
+// console.log(productosDelMedio);
+
+/**
+ * INDEX OF
+ */
+
+// const nombres = [
+//     'pedro',
+//     'juan',
+//     'miguel',
+// ];
+//
+// const nombreABuscar = prompt("Ingrese el nombre");
+//
+// console.log(
+//     nombres.indexOf(
+//         nombreABuscar.toLowerCase()
+//     )
+// );
+
+/**
+ * INCLUDES
+ */
+
+// const nombres = [
+//     'pedro',
+//     'juan',
+//     'miguel',
+// ];
+//
+// console.log(
+//     nombres.includes('juan')
+// );
+
+/**
+ * REVERSE
+ */
+
+// const nombres = [
+//     "Papa",
+//     "Yogurt",
+//     "Jabon",
+//     "Manzana",
+//     "Arroz",
+// ];
+//
+// nombres.reverse();
+//
+// console.log(nombres);
+
+/**
+ * ARRAYS CON OBJETOS
+ */
+
+// Objetos
 // class Producto {
-//
-//     constructor(nombre, precio, cantidad) {
+//     constructor (nombre, precio) {
 //         this.nombre = nombre;
 //         this.precio = precio;
-//         this.cantidad = cantidad;
-//         this.stock = 5;
 //     }
 //
-//     descontarStock() {
-//         this.stock--;
-//     }
-//
-//     sumarStock() {
-//         this.stock++;
-//     }
-//
-//     devolverSubtotal() {
-//         return this.cantidad * this.precio;
-//     }
-//
-//     total() {
-//         return this.devolverSubtotal() * 1.21;
+//     calcularSubtotal(cantidad) {
+//         return cantidad * this.precio;
 //     }
 // }
 //
-// const producto = new Producto("Jabon", 50, 3);
+// // Funciones
 //
-// // ...
-// // ...
+// // Versión 1
+// // function encontrarProducto(nombreProducto) {
+// //     let indice = -1;
+// //
+// //     for(let i = 0; i < listaDeProductos.length; i++) {
+// //
+// //         const producto = listaDeProductos[i];
+// //
+// //         if(producto.nombre === nombreProducto) {
+// //             indice = i;
+// //             break;
+// //         }
+// //
+// //     }
+// //
+// //     return indice;
+// // }
 //
-// producto.descontarStock();
+// // Versión 2 - CON FOR OF
+// function encontrarProducto(nombreProducto) {
+//     let elemento = false;
 //
-// const subtotal = producto.devolverSubtotal();
-// console.log(subtotal);
+//     for(const producto of listaDeProductos) {
+//         if(
+//             producto.nombre.toLowerCase() === nombreProducto.toLowerCase()
+//         ) {
+//             elemento = producto;
+//             break;
+//         }
+//     }
 //
-// const total = producto.total();
-// console.log(total);
+//     return elemento;
+// }
+//
+// // Inicio del programa
+// const producto1 = new Producto("Arroz", 15);
+// const producto2 = new Producto("Jabon", 25);
+// const producto3 = new Producto("Tomate", 50);
+//
+// const listaDeProductos = [
+//     producto1,
+//     producto2,
+//     producto3,
+// ];
+//
+// let nombreDeProducto = prompt("Ingrese el nombre del producto - ESC PARA SALIR");
+//
+// while(nombreDeProducto !== "ESC") {
+//
+//     const productoEncontrado = encontrarProducto(nombreDeProducto);
+//
+//     // El producto fue encontrado
+//     if(productoEncontrado !== false) {
+//
+//         const cantidad = parseInt(prompt("Ingrese la cantidad"));
+//
+//         const subtotal = productoEncontrado.calcularSubtotal(cantidad);
+//
+//         alert("EL SUBTOTAL ES: $" + subtotal);
+//
+//     } else {
+//         alert("PRODUCTO NO EXISTE");
+//     }
+//
+//     nombreDeProducto = prompt("Ingrese el nombre del producto - ESC PARA SALIR");
+// }
 
 /**
- * VALORES POR REFERENCIA
+ * EJERCICIO
+ * 7) Escriba una función que tome un array de números y devuelva un nuevo array solo con los números pares. Ej: Si se le da el array [1, 3, 4, 6, 8, 9] tiene que devolver el array [4, 6, 8]
  */
 
-// Copiar valores en variables
-// let numero1 = 10;
-// let numero2 = numero1;
+// function devolverNumerosPares(array) {
+//     const devolver = [];
 //
-// numero1 = 20;
+//     for(const numero of array) {
 //
-// console.log(numero1); // 20
-// console.log(numero2); // 10
+//         // Si el número es par
+//         if(numero % 2 === 0) {
+//             devolver.push(numero);
+//         }
+//
+//     }
+//
+//     return devolver;
+// }
+//
+// const array = [1, 3, 4, 6, 8, 9];
+//
+// const numerosPares = devolverNumerosPares(array);
+//
+// console.log(numerosPares);
 
-// Con los objetos...
-let persona1 = {
-    nombre: "Gonzalo",
-    edad: 30,
+/**
+ * MISMO EJERCICIO PERO QUE EL USUARIO INGRESE LOS NUMEROS
+ */
+
+function devolverNumerosPares(array) {
+    const devolver = [];
+
+    for(const numero of array) {
+
+        // Si el número es par
+        if(numero % 2 === 0) {
+            devolver.push(numero);
+        }
+
+    }
+
+    return devolver;
 }
-let persona2 = persona1;
 
-persona1.nombre = "Pepe";
+const array = [];
 
-persona2.nombre = "Lautaro";
+let numero = parseInt(prompt("Ingrese un número - Ingrese 0 para salir"));
 
-console.log(persona1.nombre); // "Pepe"
-console.log(persona2.nombre); // "Pepe"
+while(numero !== 0) {
+    array.push(numero);
+
+    numero = parseInt(prompt("Ingrese un número - Ingrese 0 para salir"));
+}
+
+console.log(array);
+
+const numerosPares = devolverNumerosPares(array);
+
+console.log(numerosPares);
