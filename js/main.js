@@ -1,351 +1,292 @@
 /**
- * DECLARAR ARRAY
+ * FUNCIONES QUE RETORNAN FUNCIONES
  */
 
-// const nombres = ["Pedro", "Juan", "Mariano"];
-//
-// const segundoNombre = nombres[1];
-//
-// const saludo = "Hola " + segundoNombre + " cómo estás";
-//
-// console.log(saludo);
+/** SIN FUNCIONES DE ÓRDEN SUPERIOR */
 
-/**
- * RECORRER LISTA
- */
-
-// const nombresDeProductos = [
-//     'Yogurt',
-//     'Leche',
-//     'Manteca',
-//     'Lechuga',
-//     'Tomate',
-//     'Papa',
-// ];
+// function mayorQueDiez(numero) {
+//     return numero > 10;
+// }
 //
-// for(let i = 0; i < nombresDeProductos.length; i++) {
-//     console.log(nombresDeProductos[i]);
+// function mayorQueVeinte(numero) {
+//     return numero > 20;
+// }
+//
+// function mayorQueQuince(numero) {
+//     return numero > 15;
+// }
+//
+// function mayorQueTreinta(numero) {
+//     return numero > 30;
 // }
 
-/**
- * AGREGAR ELEMENTOS A LA LISTA
- */
+/** LO MISMO CON FUNCIÓN DE ÓRDEN SUPERIOR */
 
-// const nombres = ["Juan", "Pedro"];
-
-// Forma 1
-// nombres.push("Mariano");
-// nombres.push("Pepe");
-
-// Forma 2 - Varios elementos a la vez
-// nombres.push("Mariano", "Pepe");
-
-// nombres.unshift("Andres");
-//
-// console.log(nombres);
-
-/**
- * ELIMINAR ELEMENTOS DEL ARRAY
- */
-
-// const productos = [
-//     'Leche',
-//     'Tomates',
-//     'Papa',
-//     'Crema',
-// ];
-//
-// // Elimina al final
-// productos.pop();
-//
-// // Elimina al principio
-// productos.shift();
-//
-// console.log(productos);
-
-/**
- * SPLICE
- */
-
-// const productos = [
-//     'Leche',
-//     'Tomates',
-//     'Papa',
-//     'Crema',
-//     'Jabon',
-// ];
-
-// Eliminar elementos del medio
-// productos.splice(1, 3);
-
-// Eliminar desde el índice en adelante
-// productos.splice(2);
-
-// Eliminar los 2 primeros elementos
-// productos.splice(0, 2);
-
-// Esto no elimina nada
-// productos.splice(1, 0);
-
-// El método splice me devuelve un nuevo array con los elementos eliminados
-// const eliminados = productos.splice(1, 2);
-
-// console.log(productos);
-
-/**
- * JOIN
- */
-
-// const productos = [
-//     'Leche',
-//     'Tomates',
-//     'Papa',
-//     'Crema',
-//     'Jabon',
-// ];
-//
-// const listaDeProductos = productos.join("___");
-//
-// console.log(listaDeProductos);
-
-/**
- * CONCAT
- */
-
-// const productos1 = [
-//     "Tomates",
-//     "Leche",
-// ];
-// const productos2 = [
-//     "Jabon",
-//     "Papa",
-// ];
-
-// Forma 1
-// for(let i = 0; i < productos2.length; i++) {
-//     productos1.push(productos2[i]);
-// }
-
-// Forma 2 con concat
-// const productos = productos1.concat(productos2);
-
-// console.log(productos1);
-// console.log(productos2);
-
-// console.log(productos);
-
-/**
- * SLICE
- */
-
-// const productos = [
-//     'Leche',
-//     'Tomates',
-//     'Papa',
-//     'Crema',
-//     'Jabon',
-// ];
-
-// const productosDelMedio = productos.slice(1, 4);
-
-// Esto copia desde el índice hasta el final
-// const productosDelMedio = productos.slice(1);
-
-// Esto no copia nada, ya que el segundo índice tiene que ser mayor al primero
-// const productosDelMedio = productos.slice(2, 0);
-
-// console.log(productosDelMedio);
-
-/**
- * INDEX OF
- */
-
-// const nombres = [
-//     'pedro',
-//     'juan',
-//     'miguel',
-// ];
-//
-// const nombreABuscar = prompt("Ingrese el nombre");
-//
-// console.log(
-//     nombres.indexOf(
-//         nombreABuscar.toLowerCase()
-//     )
-// );
-
-/**
- * INCLUDES
- */
-
-// const nombres = [
-//     'pedro',
-//     'juan',
-//     'miguel',
-// ];
-//
-// console.log(
-//     nombres.includes('juan')
-// );
-
-/**
- * REVERSE
- */
-
-// const nombres = [
-//     "Papa",
-//     "Yogurt",
-//     "Jabon",
-//     "Manzana",
-//     "Arroz",
-// ];
-//
-// nombres.reverse();
-//
-// console.log(nombres);
-
-/**
- * ARRAYS CON OBJETOS
- */
-
-// Objetos
-// class Producto {
-//     constructor (nombre, precio) {
-//         this.nombre = nombre;
-//         this.precio = precio;
-//     }
-//
-//     calcularSubtotal(cantidad) {
-//         return cantidad * this.precio;
+// function mayorQue (numeroAComparar) {
+//     return function(numero) {
+//         return numero > numeroAComparar;
 //     }
 // }
 //
-// // Funciones
+// const mayorQueDiez = mayorQue(10);
+// /*
+// function(numero) {
+//     return numero > 10;
+// }
+//  */
+// const mayorQueVeinte = mayorQue(20);
+// /*
+// function(numero) {
+//     return numero > 20;
+// }
+//  */
+// const mayorQueQuince = mayorQue(15);
+// /*
+// function(numero) {
+//     return numero > 15;
+// }
+//  */
+// const mayorQueTreinta = mayorQue(30);
+// /*
+// function(numero) {
+//     return numero > 30;
+// }
+//  */
 //
-// // Versión 1
-// // function encontrarProducto(nombreProducto) {
-// //     let indice = -1;
-// //
-// //     for(let i = 0; i < listaDeProductos.length; i++) {
-// //
-// //         const producto = listaDeProductos[i];
-// //
-// //         if(producto.nombre === nombreProducto) {
-// //             indice = i;
-// //             break;
-// //         }
-// //
-// //     }
-// //
-// //     return indice;
-// // }
+// /*
+// INICIO DEL PROGRAMA
+//  */
 //
-// // Versión 2 - CON FOR OF
-// function encontrarProducto(nombreProducto) {
-//     let elemento = false;
-//
-//     for(const producto of listaDeProductos) {
-//         if(
-//             producto.nombre.toLowerCase() === nombreProducto.toLowerCase()
-//         ) {
-//             elemento = producto;
-//             break;
-//         }
+// console.log(mayorQueDiez(20));
+// console.log(mayorQueVeinte(20));
+// console.log(mayorQueQuince(20));
+
+/**
+ * FUNCIONES QUE RECIBAN OTRA FUNCIÓN COMO PARAMÉTRO
+ */
+
+// function porCadaUno (arr, funcion) {
+//     for(const elemento of arr) {
+//         funcion(elemento);
 //     }
-//
-//     return elemento;
 // }
 //
-// // Inicio del programa
-// const producto1 = new Producto("Arroz", 15);
-// const producto2 = new Producto("Jabon", 25);
-// const producto3 = new Producto("Tomate", 50);
+// const numeros = [1, 2, 3, 4, 5];
+
+// porCadaUno(numeros, function (el) {
+//     console.log(el * 2);
+// });
+
+// porCadaUno(numeros, function (el) {
+//     console.log("Se está recorriendo el elemento: " + el);
+// });
+
+/**
+ * EJEMPLO 2
+ */
+
+/* FORMA VIEJA CON FUNCIONES */
+
+// function mostrarMensajeDeBienvenida(nombre) {
+//     console.log("Bienvenido " + nombre);
+// }
 //
-// const listaDeProductos = [
-//     producto1,
-//     producto2,
-//     producto3,
-// ];
+// function mostrarMensajeDeError(nombre) {
+//     console.log("El nombre de usuario " + nombre + " es inválido");
+// }
 //
-// let nombreDeProducto = prompt("Ingrese el nombre del producto - ESC PARA SALIR");
+// function autenticarUsuario(nombreUsuario) {
+//     return nombreUsuario === "Juan";
+// }
+
+/* FORMA NUEVA CON FUNCIONES DE ÓRDEN SUPERIOR */
+
+// function autenticarUsuario(
+//     nombreUsuario,
+//     funcionAutenticacionValida,
+//     funcionAutenticacionFalla,
+// ) {
 //
-// while(nombreDeProducto !== "ESC") {
-//
-//     const productoEncontrado = encontrarProducto(nombreDeProducto);
-//
-//     // El producto fue encontrado
-//     if(productoEncontrado !== false) {
-//
-//         const cantidad = parseInt(prompt("Ingrese la cantidad"));
-//
-//         const subtotal = productoEncontrado.calcularSubtotal(cantidad);
-//
-//         alert("EL SUBTOTAL ES: $" + subtotal);
-//
+//     if(nombreUsuario === "Juan") {
+//         funcionAutenticacionValida(nombreUsuario);
 //     } else {
-//         alert("PRODUCTO NO EXISTE");
+//         funcionAutenticacionFalla(nombreUsuario);
 //     }
-//
-//     nombreDeProducto = prompt("Ingrese el nombre del producto - ESC PARA SALIR");
 // }
 
-/**
- * EJERCICIO
- * 7) Escriba una función que tome un array de números y devuelva un nuevo array solo con los números pares. Ej: Si se le da el array [1, 3, 4, 6, 8, 9] tiene que devolver el array [4, 6, 8]
- */
+// Inicio del programa
+// const nombreDelUsuario = "Martin";
 
-// function devolverNumerosPares(array) {
-//     const devolver = [];
+/* FORMA CON FUNCIONES */
+// const usuarioAutenticado = autenticarUsuario(nombreDelUsuario);
 //
-//     for(const numero of array) {
-//
-//         // Si el número es par
-//         if(numero % 2 === 0) {
-//             devolver.push(numero);
-//         }
-//
-//     }
-//
-//     return devolver;
+// if(!usuarioAutenticado) {
+//     mostrarMensajeDeError(nombreDelUsuario);
+// } else {
+//     mostrarMensajeDeBienvenida(nombreDelUsuario);
 // }
+
+/* FORMA CON FUNCIONES DE ÓRDEN SUPERIOR */
+
+// autenticarUsuario(
+//     nombreDelUsuario,
+//     function(nombre) {
+//         console.log("Bienvenido " + nombre);
+//     },
+//     function(nombre) {
+//         console.log("Nombre de usuario " + nombre + " incorrecto.");
+//     }
+// )
+
+// ...
+// ...
+// ...
+// ...
+// ...
+
+// const usuarioAutenticado2 = autenticarUsuario(nombreDelUsuario);
 //
-// const array = [1, 3, 4, 6, 8, 9];
-//
-// const numerosPares = devolverNumerosPares(array);
-//
-// console.log(numerosPares);
+// if(!usuarioAutenticado2) {
+//     mostrarMensajeDeError(nombreDelUsuario);
+// } else {
+//     mostrarMensajeDeBienvenida(nombreDelUsuario);
+// }
+
+// autenticarUsuario(
+//     nombreDelUsuario,
+//     function(nombre) {
+//         console.log("Bienvenido " + nombre);
+//     },
+//     function(nombre) {
+//         alert("NOMBRE DE USUARIO INCORRECTO");
+//         console.log("Nombre de usuario " + nombre + " incorrecto.");
+//     }
+// )
 
 /**
- * MISMO EJERCICIO PERO QUE EL USUARIO INGRESE LOS NUMEROS
+ * FUNCIONES DE ÓRDEN SUPERIOR
  */
 
-function devolverNumerosPares(array) {
-    const devolver = [];
+// FOR EACH
 
-    for(const numero of array) {
+// const personas = [
+//     {
+//         nombre: "Pepe",
+//         edad: 15,
+//         profesion: "Plomero",
+//     },
+//     {
+//         nombre: "Juan",
+//         edad: 25,
+//         profesion: "Gasista",
+//     },
+//     {
+//         nombre: "Pedro",
+//         edad: 20,
+//         profesion: "Electricista",
+//     },
+//     {
+//         nombre: "Juan",
+//         edad: 45,
+//         profesion: "Barrendero",
+//     },
+// ];
 
-        // Si el número es par
-        if(numero % 2 === 0) {
-            devolver.push(numero);
-        }
+// personas.forEach( (el) => {
+//      console.log("El nombre es: " + el.nombre);
+// });
 
+// FIND
+
+// const juan = personas.find( (el) => {
+//     return el.nombre === "Juan";
+// });
+
+// FILTER
+
+// const juanes = personas.filter( (el) => {
+//     return el.nombre === "Juan";
+// });
+
+// SOME
+
+// const existePepe = personas.some( (el) => {
+//     return el.nombre === "qwjkeqwjkeqwkjeqwjk";
+// });
+
+// MAP
+
+// const edades = personas.map( (el) => {
+//     return el.edad;
+// });
+
+// const personasSinEdad = personas.map( (el) => {
+//     return {
+//         nombre: el.nombre,
+//         profesion: el.profesion,
+//     }
+// });
+//
+// console.log(personasSinEdad);
+
+// REDUCE
+
+const carrito = [
+    {
+        nombre: "Yogurt",
+        precio: 15,
+        cantidad: 2,
+    },
+    {
+        nombre: "Pepino",
+        precio: 20,
+        cantidad: 4,
+    },
+    {
+        nombre: "Leche",
+        precio: 25,
+        cantidad: 3,
+    },
+    {
+        nombre: "Lechuga",
+        precio: 20,
+        cantidad: 1,
+    },
+    {
+        nombre: "laurel",
+        precio: 40,
+        cantidad: 2,
+    },
+];
+
+// const subtotal = carrito.reduce( (acc, el) => {
+//     return acc + (el.precio * el.cantidad);
+// }, 0);
+//
+// console.log(subtotal);
+
+// SORT
+
+// ORDENAR POR PRECIO
+// carrito.sort( (a, b) => {
+//     if(a.precio > b.precio) {
+//         return 1;
+//     } else if(a.precio < b.precio) {
+//         return -1;
+//     } else {
+//         return 0;
+//     }
+// });
+
+// ORDENAR POR NOMBRE
+carrito.sort( (a, b) => {
+    if(a.nombre.toLowerCase() > b.nombre.toLowerCase()) {
+        return 1;
+    } else if(a.nombre.toLowerCase() < b.nombre.toLowerCase()) {
+        return -1;
+    } else {
+        return 0;
     }
+});
 
-    return devolver;
-}
-
-const array = [];
-
-let numero = parseInt(prompt("Ingrese un número - Ingrese 0 para salir"));
-
-while(numero !== 0) {
-    array.push(numero);
-
-    numero = parseInt(prompt("Ingrese un número - Ingrese 0 para salir"));
-}
-
-console.log(array);
-
-const numerosPares = devolverNumerosPares(array);
-
-console.log(numerosPares);
+console.log(carrito);
