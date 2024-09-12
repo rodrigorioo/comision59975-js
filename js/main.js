@@ -1,116 +1,180 @@
-// // Objetos
-// class Cliente {
-//     constructor(nombre, saldo) {
-//         this.nombre = nombre;
-//         this.saldo = saldo;
-//     }
-//
-//     retirar(monto) {
-//         this.saldo = this.saldo - monto;
-//     }
-//
-//     depositar(monto) {
-//         this.saldo = this.saldo + monto;
-//     }
-// }
-//
-// // Funciones
-// function obtenerCliente(mensajePrompt) {
-//     let nombreCliente = prompt(mensajePrompt);
-//     let cliente = clientes.find( (el) => el.nombre.toLowerCase() === nombreCliente.toLowerCase());
-//
-//     while(cliente === undefined) {
-//         alert("Nombre de cliente inválido, vuelva a ingresar otro");
-//         nombreCliente = prompt(mensajePrompt);
-//         cliente = clientes.find( (el) => el.nombre.toLowerCase() === nombreCliente.toLowerCase());
-//     }
-//
-//     return cliente;
-// }
-//
-// function transferirDinero() {
-//     // Obtener objetos de cliente del array
-//     const clienteTransfiere = obtenerCliente("Ingrese el nombre del cliente que va a realizar la transferencia");
-//     const clienteQueRecibe = obtenerCliente("Ingrese el nombre del cliente que va a recibir la transferencia");
-//
-//     let montoTransferencia = parseFloat(prompt("Ingrese el monto de la transferencia"));
-//
-//     while(montoTransferencia <= 0 || montoTransferencia > clienteTransfiere.saldo) {
-//         alert("VALOR INVÁLIDO");
-//         montoTransferencia = parseFloat(prompt("Ingrese el monto de la transferencia"));
-//     }
-//
-//     // Modificamos los saldos de los clientes
-//     clienteTransfiere.retirar(montoTransferencia);
-//     clienteQueRecibe.depositar(montoTransferencia);
-// }
-//
-// function consultarSaldo() {
-//     const cliente = obtenerCliente("Ingrese el nombre del cliente al que va a consultar el saldo");
-//
-//     alert("EL SALDO DEL CLIENTE ES: $" + cliente.saldo);
-// }
-//
-// // Inicio del programa
-// const clientes = [
-//     new Cliente("Pedro", 5000),
-//     new Cliente("Juan", 7500),
-//     new Cliente("Marcos", 2000),
-//     new Cliente("Gabriel", 3500),
-// ];
-//
-// let mensajePrompt = "Ingrese el número de la operación que quiere realizar. 1- Transferir dinero, 2- Consultar saldo, 0- Salir";
-// let opcion = parseInt(prompt(mensajePrompt));
-//
-// while(opcion !== 0) {
-//
-//     switch(opcion) {
-//         case 1:
-//             transferirDinero();
-//             break;
-//
-//         case 2:
-//             consultarSaldo();
-//             break;
-//     }
-//
-//     // Volvemos a pedir la opción al usuario
-//     opcion = parseInt(prompt(mensajePrompt));
+/**
+ * GET ELEMENTS BY ID
+ */
+
+// const div = document.getElementById("divGeneral");
+// const titulo = document.getElementById("tituloh1");
+
+// console.log(div.innerHTML);
+// console.log(titulo.innerHTML);
+
+/**
+ * GET ELEMENTS BY CLASS NAME
+ */
+
+// const parrafos = document.getElementsByClassName("parrafo");
+
+/**
+ * GET ELEMENTS BY TAG NAME
+ */
+
+// const parrafos = document.getElementsByTagName("p");
+
+// console.log(parrafos);
+
+// Recorrer Lista de nodos
+// for (const etiquetaP of parrafos) {
+//     console.log(etiquetaP.innerHTML);
 // }
 
 /**
- * EJERCICIOS ÓRDEN SUPERIOR
- *
- * 8)
+ * MODIFICAR NODOS
  */
 
-// Función
-function ordenarPorPropiedad(array, nombreDeLaPropiedad) {
+// const div = document.getElementById("divGeneral");
 
-    array.sort( (a, b) => {
+// div.innerHTML = '<h4>NUEVA ETIQUETA EDITADA</h4>';
+// div.innerText = '<h4>NUEVA ETIQUETA EDITADA</h4>';
 
-        if(a[nombreDeLaPropiedad] > b[nombreDeLaPropiedad]) {
-            return 1;
-        } else if(a[nombreDeLaPropiedad] < b[nombreDeLaPropiedad]) {
-            return -1;
-        }
+// Modificar clases
 
-        return 0;
-    });
+// const parrafos = document.getElementsByClassName("parrafo");
+//
+// for (const parrafo of parrafos) {
+//     parrafo.innerHTML = "PARRAFO EDITADO";
+//
+//     // Pisamos todas las clases y asignamos una nueva
+//     // parrafo.className = "parrafo2";
+//
+//     // Agregamos una clase nueva a las ya existentes
+//     parrafo.className = parrafo.className + " negrita";
+// }
 
-    return array;
+/**
+ * AGREGAR O QUITAR NODOS
+ */
+
+// const div = document.getElementById("divGeneral");
+//
+// const etiquetaH3 = document.createElement("h3");
+// etiquetaH3.innerHTML = 'Texto etiqueta H3';
+//
+// const etiquetaP = document.createElement("p");
+// etiquetaP.className = "parrafo2";
+// etiquetaP.innerHTML = "PARRAFO DE LA ETIQUETA QUE ACABO DE AGREGAR";
+//
+// div.append(etiquetaH3);
+// div.append(etiquetaP);
+
+// const h1 = document.getElementById("tituloh1");
+//
+// const strong = document.createElement("strong");
+// strong.innerHTML = "TEXTO EN NEGRITA";
+//
+// h1.append(strong);
+
+/**
+ * REMOVER ELEMENTO
+ */
+
+// const parrafos = document.getElementsByClassName("parrafo");
+//
+// for (const parrafo of parrafos) {
+//     parrafo.remove();
+// }
+
+// const div = document.getElementById("divGeneral");
+//
+// const etiquetaH3 = document.createElement("h3");
+// etiquetaH3.innerHTML = 'Texto etiqueta H3';
+//
+// div.append(etiquetaH3);
+//
+// // ...
+// // ...
+//
+// // Eliminamos la etiqueta H3 que creamos previamente
+// etiquetaH3.remove();
+
+/**
+ * OBTENER DATOS DE INPUT
+ */
+
+// const input = document.getElementById("inputDePrueba");
+//
+// input.value = "Pedro";
+
+/**
+ * PLANTILLAS LITERALES
+ */
+
+// class Producto {
+//     constructor(nombre, precio) {
+//         this.nombre = nombre;
+//         this.precio = precio;
+//     }
+// }
+//
+// const producto = new Producto("Yogurt", 20);
+//
+// const p = document.getElementById("parrafoProducto");
+// p.innerHTML = "Nombre del producto: " + producto.nombre + " - Precio: $" + producto.precio;
+// p.innerHTML = `Nombre del producto: ${producto.nombre} - Precio: $${producto.precio}`;
+
+// p.innerHTML = "Texto 1<br>" +
+//     "Texto 2<br>" +
+//     "Texto 3";
+// p.innerHTML = `Texto 1<br>
+// Texto 2<br>
+// Texto 3`;
+
+/**
+ * QUERY SELECTORS
+ */
+
+// const p = document.querySelector("#divQuerySelector p.parrafo2");
+//
+// console.log(p);
+
+// const parrafos = document.querySelectorAll("#divQuerySelector p.jqewkjew");
+//
+// console.log(parrafos);
+
+/**
+ * EJEMPLO DE DOM
+ */
+
+// Objetos
+class Producto {
+    constructor(nombre, precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
 }
 
-// Inicio del programa
+// Funciones
+function renderizarProductos(productos) {
+    const ul = document.createElement("ul");
 
-const personas = [
-    { nombre: 'Juan', apellido: "Fernandez", edad: 30 },
-    { nombre: 'María', apellido: "Gomez", edad: 25 },
-    { nombre: 'Pedro', apellido: "Rodriguez", edad: 35 },
-    { nombre: 'Tomas', apellido: "Ramirez", edad: 20 },
-    { nombre: 'Matias', apellido: "Mendez", edad: 40 },
+    for (const producto of productos) {
+
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>Nombre:</strong> ${producto.nombre} - <strong>Precio</strong> $${producto.precio}`;
+
+        ul.append(li);
+    }
+
+    div.append(ul);
+}
+
+
+// Inicio del programa
+const div = document.getElementById("contenedor");
+const productos = [
+    new Producto("Tomates", 50),
+    new Producto("Yogurt", 90),
+    new Producto("Jabon", 15),
+    new Producto("Manteca", 25),
 ];
 
-const personasOrdenadasPorEdad = ordenarPorPropiedad(personas, 'edad');
-
-console.log(personasOrdenadasPorEdad);
+renderizarProductos(productos);
