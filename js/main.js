@@ -1,147 +1,132 @@
-/**
- * GET ELEMENTS BY ID
- */
+// const boton = document.getElementById("botonsito");
 
-// const div = document.getElementById("divGeneral");
-// const titulo = document.getElementById("tituloh1");
+// Forma 1 - Con función anónima
+// boton.addEventListener("click", () => {
+//     console.log("Clickeame");
+// });
 
-// console.log(div.innerHTML);
-// console.log(titulo.innerHTML);
-
-/**
- * GET ELEMENTS BY CLASS NAME
- */
-
-// const parrafos = document.getElementsByClassName("parrafo");
-
-/**
- * GET ELEMENTS BY TAG NAME
- */
-
-// const parrafos = document.getElementsByTagName("p");
-
-// console.log(parrafos);
-
-// Recorrer Lista de nodos
-// for (const etiquetaP of parrafos) {
-//     console.log(etiquetaP.innerHTML);
+// Forma 2 - Con función ya definida
+// function callbackClickeame() {
+//     console.log("Clickeame 2");
 // }
+//
+// boton.addEventListener("click", callbackClickeame);
 
 /**
- * MODIFICAR NODOS
+ * EVENTOS DEL MOUSE
  */
 
-// const div = document.getElementById("divGeneral");
+// const cajita = document.getElementById("cajita");
 
-// div.innerHTML = '<h4>NUEVA ETIQUETA EDITADA</h4>';
-// div.innerText = '<h4>NUEVA ETIQUETA EDITADA</h4>';
+// cajita.addEventListener("mousedown", () => {
+//     // Cuando se oprime el mouse...
+//     cajita.className = "caja caja-verde";
+// });
+//
+// cajita.addEventListener("mouseup", () => {
+//     // Cuando se suelta el mouse...
+//     cajita.className = "caja";
+// });
 
-// Modificar clases
+// let elementoNuevo;
+//
+// cajita.addEventListener("mouseover", () => {
+//     // Puntero entra al elemento...
+//     cajita.className = "caja";
+//
+//     elementoNuevo = document.createElement("div");
+//     elementoNuevo.className = "caja-chiquita caja-verde";
+//
+//     cajita.append(elementoNuevo);
+// });
+//
+// cajita.addEventListener("mouseout", () => {
+//     // Puntero sale del elemento...
+//     cajita.className = "caja";
+//
+//     elementoNuevo.remove();
+// });
 
-// const parrafos = document.getElementsByClassName("parrafo");
-//
-// for (const parrafo of parrafos) {
-//     parrafo.innerHTML = "PARRAFO EDITADO";
-//
-//     // Pisamos todas las clases y asignamos una nueva
-//     // parrafo.className = "parrafo2";
-//
-//     // Agregamos una clase nueva a las ya existentes
-//     parrafo.className = parrafo.className + " negrita";
-// }
+// cajita.addEventListener("mousemove", () => {
+//     console.log("Se movió");
+// });
+
+// cajita.addEventListener("click", () => {
+//     console.log("se clickeo el div");
+// });
 
 /**
- * AGREGAR O QUITAR NODOS
+ * EVENTOS DEL TECLADO
  */
 
-// const div = document.getElementById("divGeneral");
-//
-// const etiquetaH3 = document.createElement("h3");
-// etiquetaH3.innerHTML = 'Texto etiqueta H3';
-//
-// const etiquetaP = document.createElement("p");
-// etiquetaP.className = "parrafo2";
-// etiquetaP.innerHTML = "PARRAFO DE LA ETIQUETA QUE ACABO DE AGREGAR";
-//
-// div.append(etiquetaH3);
-// div.append(etiquetaP);
+// const input = document.getElementById("inputsito");
 
-// const h1 = document.getElementById("tituloh1");
+// input.addEventListener("keydown", () => {
+//     console.log("Se oprime una tecla");
+// });
 //
-// const strong = document.createElement("strong");
-// strong.innerHTML = "TEXTO EN NEGRITA";
+// input.addEventListener("keyup", () => {
+//     console.log("Suelto la tecla");
+// });
+
+// input.addEventListener("change", () => {
+//     console.log("El valor del input es: " + input.value);
+// });
 //
-// h1.append(strong);
+// input.addEventListener("input", () => {
+//     console.log("Se tecleó: " + input.value);
+// });
 
 /**
- * REMOVER ELEMENTO
+ * EVENTO SUBMIT
  */
 
-// const parrafos = document.getElementsByClassName("parrafo");
+// const formulario = document.getElementById("formsito");
+// const input1 = document.getElementById("input1");
+// const input2 = document.getElementById("input2");
 //
-// for (const parrafo of parrafos) {
-//     parrafo.remove();
-// }
-
-// const div = document.getElementById("divGeneral");
+// formulario.addEventListener("submit", (e) => {
 //
-// const etiquetaH3 = document.createElement("h3");
-// etiquetaH3.innerHTML = 'Texto etiqueta H3';
+//     e.preventDefault();
 //
-// div.append(etiquetaH3);
-//
-// // ...
-// // ...
-//
-// // Eliminamos la etiqueta H3 que creamos previamente
-// etiquetaH3.remove();
+//     console.log("Valor del input1: " + input1.value);
+//     console.log("Valor del input2: " + input2.value);
+// });
 
 /**
- * OBTENER DATOS DE INPUT
+ * OBJETO EVENT Y PREVENT DEFAULT
  */
 
-// const input = document.getElementById("inputDePrueba");
+// const input1 = document.getElementById("input1");
+
+// Input que no acepta vocales
+// input1.addEventListener("keydown", (e) => {
 //
-// input.value = "Pedro";
-
-/**
- * PLANTILLAS LITERALES
- */
-
-// class Producto {
-//     constructor(nombre, precio) {
-//         this.nombre = nombre;
-//         this.precio = precio;
+//     const vocales = ["a", "e", "i", "o", "u"];
+//     const key = e.key;
+//
+//     if(vocales.includes(key)) {
+//         e.preventDefault();
 //     }
-// }
-//
-// const producto = new Producto("Yogurt", 20);
-//
-// const p = document.getElementById("parrafoProducto");
-// p.innerHTML = "Nombre del producto: " + producto.nombre + " - Precio: $" + producto.precio;
-// p.innerHTML = `Nombre del producto: ${producto.nombre} - Precio: $${producto.precio}`;
+// });
 
-// p.innerHTML = "Texto 1<br>" +
-//     "Texto 2<br>" +
-//     "Texto 3";
-// p.innerHTML = `Texto 1<br>
-// Texto 2<br>
-// Texto 3`;
+// Input que formatee el valor a un CUIT (20-11111111-1)
+// input1.addEventListener("keydown", (e) => {
+//
+//     const val = input1.value;
+//     const key = e.key;
+//
+//     if(
+//         (val.length === 1 || val.length === 10) &&
+//         key !== "Backspace"
+//     ) {
+//         e.preventDefault();
+//         input1.value = `${val}${key}-`;
+//     }
+// });
 
 /**
- * QUERY SELECTORS
- */
-
-// const p = document.querySelector("#divQuerySelector p.parrafo2");
-//
-// console.log(p);
-
-// const parrafos = document.querySelectorAll("#divQuerySelector p.jqewkjew");
-//
-// console.log(parrafos);
-
-/**
- * EJEMPLO DE DOM
+ * EJEMPLO COMPLETO
  */
 
 // Objetos
@@ -150,31 +135,114 @@ class Producto {
         this.nombre = nombre;
         this.precio = precio;
     }
+
+    generarTR() {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${this.nombre}</td>
+            <td>$${this.precio}</td>
+        `;
+
+        return tr;
+    }
 }
 
 // Funciones
-function renderizarProductos(productos) {
-    const ul = document.createElement("ul");
+function renderizarProductos() {
 
-    for (const producto of productos) {
+    tbodyTablaProductos.innerHTML = "";
 
-        const li = document.createElement("li");
-        li.innerHTML = `<strong>Nombre:</strong> ${producto.nombre} - <strong>Precio</strong> $${producto.precio}`;
-
-        ul.append(li);
+    for(const producto of productosFiltrados) {
+        tbodyTablaProductos.append(producto.generarTR());
     }
-
-    div.append(ul);
 }
 
+function ordenarProductos() {
+
+    productosFiltrados.sort( (a, b) => {
+
+        if(ordenarPrecioAsc) {
+            // Ordenar ascendentemente...
+
+            if(a.precio > b.precio) {
+                return 1;
+            } else if(a.precio < b.precio) {
+                return -1;
+            }
+
+            return 0;
+
+        } else {
+
+            // Ordenar descendentemente...
+            if(a.precio > b.precio) {
+                return -1;
+            } else if(a.precio < b.precio) {
+                return 1;
+            }
+
+            return 0;
+        }
+
+    });
+
+    renderizarProductos();
+}
 
 // Inicio del programa
-const div = document.getElementById("contenedor");
-const productos = [
+const listaDeProductos = [
     new Producto("Tomates", 50),
-    new Producto("Yogurt", 90),
-    new Producto("Jabon", 15),
-    new Producto("Manteca", 25),
+    new Producto("Papa", 15),
+    new Producto("Yogurt", 25),
+    new Producto("Lechuga", 30),
 ];
+let productosFiltrados = listaDeProductos;
+let ordenarPrecioAsc = true;
 
-renderizarProductos(productos);
+const formularioAgregarProducto = document.getElementById("formAgregarProducto");
+const nombreProducto = document.getElementById("nombreProducto");
+const precioProducto = document.getElementById("precioProducto");
+const tbodyTablaProductos = document.getElementById("tbodyTablaProductos");
+const inputBuscarProducto = document.getElementById("buscarProducto");
+const thPrecio = document.getElementById("thPrecio");
+
+formularioAgregarProducto.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Creamos el objeto
+    const producto = new Producto(
+        nombreProducto.value,
+        parseFloat(precioProducto.value),
+    );
+
+    // Lo agregamos a la lista
+    listaDeProductos.push(producto);
+
+    // Limpiamos los input
+    nombreProducto.value = "";
+    precioProducto.value = "";
+
+    // Renderizamos la tabla
+    renderizarProductos();
+});
+
+inputBuscarProducto.addEventListener("input", () => {
+
+    // Obtener el valor del input cada vez que se ejecuta el evento
+    const val = inputBuscarProducto.value;
+
+    productosFiltrados = listaDeProductos.filter( (el) => {
+         return el.nombre.toLowerCase().includes(val.toLowerCase());
+    });
+
+    renderizarProductos();
+});
+
+thPrecio.addEventListener("click", () => {
+    ordenarPrecioAsc = !ordenarPrecioAsc;
+
+    ordenarProductos();
+});
+
+// Renderizar productos
+renderizarProductos();

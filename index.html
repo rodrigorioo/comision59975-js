@@ -5,48 +5,44 @@
     <title>Curso de JavaScript</title>
 
     <link href="css/estilos.css" rel="stylesheet" />
-
-    <style>
-        .parrafo {
-            color: red;
-        }
-
-        .parrafo2 {
-            color: green;
-        }
-
-        .negrita {
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
 
 <h1 id="tituloh1">Curso de JavaScript</h1>
 
-<!--<div class="claseDeDiv" id="divGeneral">-->
-<!--&lt;!&ndash;    <p class="parrafo otraClase1">Un párrafo</p>&ndash;&gt;-->
-<!--&lt;!&ndash;    <p class="parrafo otraClase2">Un párrafo 2</p>&ndash;&gt;-->
-<!--&lt;!&ndash;    <p class="parrafo otraClase3">Un párrafo 3</p>&ndash;&gt;-->
+<!--<button type="button" id="botonsito">Clickeame</button>-->
 
-<!--    <p class="parrafo">Un párrafo</p>-->
-<!--    <p class="parrafo2">Un párrafo 2</p>-->
-<!--    <p class="parrafo2">Un párrafo 3</p>-->
+<!--<div class="caja" id="cajita">-->
+
 <!--</div>-->
 
-<!--<input type="text" id="inputDePrueba" value="Juan" />-->
+<!--<input type="text" id="inputsito" />-->
 
-<!--<p id="parrafoProducto"></p>-->
+<!--<form id="formsito">-->
+<!--    <input type="text" name="nombre_profesor" id="input1" />-->
+<!--    <input type="text" name="apellido_profesor" id="input2" />-->
 
-<!--<div id="divQuerySelector">-->
-<!--    <p>Texto 1</p>-->
-<!--    <p class="parrafo">Texto 2</p>-->
-<!--    <p class="parrafo2">Texto 3</p>-->
-<!--</div>-->
+<!--    <button type="submit">Enviar formulario</button>-->
+<!--</form>-->
 
-<div id="contenedor">
+<form id="formAgregarProducto">
+    <input type="text" id="nombreProducto" />
+    <input type="text" id="precioProducto" />
+    <button type="submit">Agregar producto</button>
+</form>
 
-</div>
+<input type="text" id="buscarProducto" />
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th id="thPrecio">Precio</th>
+        </tr>
+    </thead>
+    <tbody id="tbodyTablaProductos">
+    </tbody>
+</table>
 
 <script src="js/main.js"></script>
 
