@@ -1,129 +1,94 @@
-// const boton = document.getElementById("botonsito");
+/**
+ * GUARDAR EN STORAGE
+ */
 
-// Forma 1 - Con función anónima
-// boton.addEventListener("click", () => {
-//     console.log("Clickeame");
-// });
+// localStorage.setItem("cantidadProductosEnCarrito", 5);
+// localStorage.setItem("nombre", "Rodrigo");
+//
+// localStorage.setItem("nombre", "Pedro");
 
-// Forma 2 - Con función ya definida
-// function callbackClickeame() {
-//     console.log("Clickeame 2");
+/**
+ * OBTENER VALOR DE STORAGE
+ */
+
+// const nombre = localStorage.getItem("nombre");
+
+// const cantidadProductosEnCarrito = parseInt(localStorage.getItem("cantidadProductosEnCarrito"));
+//
+// console.log(cantidadProductosEnCarrito);
+
+/**
+ * ALMACENAR ARRAYS
+ */
+// const nombres = ["Pepe", "Juan", "Pedro"];
+//
+// localStorage.setItem("nombres", nombres);
+
+// const nombres = localStorage.getItem("nombres").split(",");
+//
+// console.log(nombres);
+
+/**
+ * RECORRER STORAGE
+ */
+
+// for(let i = 0; i < localStorage.length; i++) {
+//     const nombreClave = localStorage.key(i);
+//     const valor = localStorage.getItem(nombreClave);
+//
+//     console.log(`Clave: ${nombreClave} - Valor: ${valor}`);
 // }
-//
-// boton.addEventListener("click", callbackClickeame);
 
 /**
- * EVENTOS DEL MOUSE
+ * ELIMINAR DATOS STORAGE
  */
 
-// const cajita = document.getElementById("cajita");
-
-// cajita.addEventListener("mousedown", () => {
-//     // Cuando se oprime el mouse...
-//     cajita.className = "caja caja-verde";
-// });
-//
-// cajita.addEventListener("mouseup", () => {
-//     // Cuando se suelta el mouse...
-//     cajita.className = "caja";
-// });
-
-// let elementoNuevo;
-//
-// cajita.addEventListener("mouseover", () => {
-//     // Puntero entra al elemento...
-//     cajita.className = "caja";
-//
-//     elementoNuevo = document.createElement("div");
-//     elementoNuevo.className = "caja-chiquita caja-verde";
-//
-//     cajita.append(elementoNuevo);
-// });
-//
-// cajita.addEventListener("mouseout", () => {
-//     // Puntero sale del elemento...
-//     cajita.className = "caja";
-//
-//     elementoNuevo.remove();
-// });
-
-// cajita.addEventListener("mousemove", () => {
-//     console.log("Se movió");
-// });
-
-// cajita.addEventListener("click", () => {
-//     console.log("se clickeo el div");
-// });
+// localStorage.removeItem("cantidadProductosEnCarrito");
+// localStorage.clear();
 
 /**
- * EVENTOS DEL TECLADO
+ * ALMACENAR OBJETOS STORAGE
  */
 
-// const input = document.getElementById("inputsito");
+const persona = {
+    nombre: "Pedro",
+    edad: 25,
+    verNombre: () => {
+        console.log(this.nombre);
+    },
+    profesion: "Profesor",
+};
+//
+// const personaJSON = JSON.stringify(persona);
+//
+// localStorage.setItem("persona", personaJSON);
 
-// input.addEventListener("keydown", () => {
-//     console.log("Se oprime una tecla");
-// });
-//
-// input.addEventListener("keyup", () => {
-//     console.log("Suelto la tecla");
-// });
+// Obtener objetos JSON en Storage
 
-// input.addEventListener("change", () => {
-//     console.log("El valor del input es: " + input.value);
-// });
+// const personaJSON = localStorage.getItem("persona");
 //
-// input.addEventListener("input", () => {
-//     console.log("Se tecleó: " + input.value);
-// });
+// const persona = JSON.parse(personaJSON);
+//
+// console.log(persona);
 
-/**
- * EVENTO SUBMIT
- */
+// Guardar arrays como JSON
+// const nombres = ["Pedro", "Gabriel", "Juan"];
+//
+// const nombresJSON = JSON.stringify(nombres);
+//
+// localStorage.setItem("nombres", nombresJSON);
 
-// const formulario = document.getElementById("formsito");
-// const input1 = document.getElementById("input1");
-// const input2 = document.getElementById("input2");
+// const nombresJSON = localStorage.getItem("nombres");
 //
-// formulario.addEventListener("submit", (e) => {
+// const nombres = JSON.parse(nombresJSON);
 //
-//     e.preventDefault();
-//
-//     console.log("Valor del input1: " + input1.value);
-//     console.log("Valor del input2: " + input2.value);
-// });
+// console.log(nombres);
 
-/**
- * OBJETO EVENT Y PREVENT DEFAULT
- */
+// Parsear JSON con formato malo
 
-// const input1 = document.getElementById("input1");
-
-// Input que no acepta vocales
-// input1.addEventListener("keydown", (e) => {
+// const persona = JSON.parse('{"nombre":"Pedro","edad":25,"profesion":Profesor"}');
 //
-//     const vocales = ["a", "e", "i", "o", "u"];
-//     const key = e.key;
-//
-//     if(vocales.includes(key)) {
-//         e.preventDefault();
-//     }
-// });
-
-// Input que formatee el valor a un CUIT (20-11111111-1)
-// input1.addEventListener("keydown", (e) => {
-//
-//     const val = input1.value;
-//     const key = e.key;
-//
-//     if(
-//         (val.length === 1 || val.length === 10) &&
-//         key !== "Backspace"
-//     ) {
-//         e.preventDefault();
-//         input1.value = `${val}${key}-`;
-//     }
-// });
+// console.log(persona);
 
 /**
  * EJEMPLO COMPLETO
@@ -135,114 +100,156 @@ class Producto {
         this.nombre = nombre;
         this.precio = precio;
     }
-
-    generarTR() {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-            <td>${this.nombre}</td>
-            <td>$${this.precio}</td>
-        `;
-
-        return tr;
-    }
 }
 
 // Funciones
-function renderizarProductos() {
+function eliminarProducto(nombre) {
 
-    tbodyTablaProductos.innerHTML = "";
+    // Filtro los productos y obtengo todos menos el del nombre que quiero eliminar
+    listaProductos = listaProductos.filter( (el) => {
+        return el.nombre.toLowerCase() !== nombre.toLowerCase();
+    });
 
-    for(const producto of productosFiltrados) {
-        tbodyTablaProductos.append(producto.generarTR());
+    // Renderizar productos
+    renderizarProductos();
+
+    // Actualizar localStorage
+    actualizarLS();
+}
+
+function actualizarLS() {
+    const productosJSON = JSON.stringify(listaProductos);
+
+    localStorage.setItem("productos", productosJSON);
+}
+
+function obtenerProductosLS() {
+    const productosJSON = localStorage.getItem("productos");
+
+    // Si el usuario no tiene nada en localstorage
+    if(productosJSON === null) {
+
+        return [
+            new Producto("Yogurt", 25),
+            new Producto("Tomates", 30),
+            new Producto("Papa", 20),
+        ];
+
+    } else {
+
+        // Si el usuario tiene algo guardado en localStorage, lo parseamos y lo devolvemos
+
+        return JSON.parse(productosJSON);
+
     }
 }
 
-function ordenarProductos() {
+function renderizarProductos() {
 
-    productosFiltrados.sort( (a, b) => {
+    tbodyProductos.innerHTML = "";
 
-        if(ordenarPrecioAsc) {
-            // Ordenar ascendentemente...
+    for(const producto of listaProductos) {
 
-            if(a.precio > b.precio) {
-                return 1;
-            } else if(a.precio < b.precio) {
-                return -1;
-            }
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${producto.nombre}</td>
+        `;
 
-            return 0;
+        // Crear td con precio
+        const tdPrecio = document.createElement("td");
+        const p = document.createElement("p");
+        p.innerText = `$${producto.precio}`;
+        tdPrecio.append(p);
 
-        } else {
+        p.addEventListener("click", () => {
 
-            // Ordenar descendentemente...
-            if(a.precio > b.precio) {
-                return -1;
-            } else if(a.precio < b.precio) {
-                return 1;
-            }
+            const inputNuevoPrecio = document.createElement("input");
 
-            return 0;
-        }
+            inputNuevoPrecio.addEventListener("change", () => {
+                 const nuevoPrecio = inputNuevoPrecio.value;
 
+                 producto.precio = parseFloat(nuevoPrecio);
+
+                 // Actualizar LS
+                 actualizarLS();
+
+                 // Volver a agregar la etiqueta p actualizada
+                p.innerText = `$${producto.precio}`;
+                tdPrecio.innerHTML = "";
+                tdPrecio.append(p);
+
+                // Remover input
+                inputNuevoPrecio.remove();
+            });
+
+            tdPrecio.innerHTML = "";
+            tdPrecio.append(inputNuevoPrecio);
+        });
+
+        // Crear td con boton de eliminar
+        const tdAcciones = document.createElement("td");
+        const botonEliminar = document.createElement("button");
+        botonEliminar.innerText = "Eliminar";
+
+        botonEliminar.addEventListener("click", () => {
+
+            eliminarProducto(producto.nombre);
+
+        });
+
+        tdAcciones.append(botonEliminar);
+
+        // Agregar td al tr
+        tr.append(tdPrecio);
+        tr.append(tdAcciones);
+
+        // Agregar tr al tbody
+        tbodyProductos.append(tr);
+    }
+}
+
+function agregarProducto(nombre, precio) {
+
+    const buscarProducto = listaProductos.find( (el) => {
+        return el.nombre.toLowerCase() === nombre.toLowerCase();
     });
 
+
+    if(buscarProducto === undefined) {
+        // Si el producto no existe
+
+        listaProductos.push(
+            new Producto(nombre, parseFloat(precio)),
+        );
+    } else {
+        // Si el producto existe
+
+        buscarProducto.precio = parseFloat(precio);
+    }
+
+    // Actualizar LocalStorage
+    actualizarLS();
+
+    // Renderizar productos
     renderizarProductos();
 }
 
 // Inicio del programa
-const listaDeProductos = [
-    new Producto("Tomates", 50),
-    new Producto("Papa", 15),
-    new Producto("Yogurt", 25),
-    new Producto("Lechuga", 30),
-];
-let productosFiltrados = listaDeProductos;
-let ordenarPrecioAsc = true;
+let listaProductos = obtenerProductosLS();
 
-const formularioAgregarProducto = document.getElementById("formAgregarProducto");
-const nombreProducto = document.getElementById("nombreProducto");
-const precioProducto = document.getElementById("precioProducto");
-const tbodyTablaProductos = document.getElementById("tbodyTablaProductos");
-const inputBuscarProducto = document.getElementById("buscarProducto");
-const thPrecio = document.getElementById("thPrecio");
+const formAgregarProducto = document.getElementById("formAgregarProducto");
+const inputNombreProducto = document.getElementById("nombreProducto");
+const inputPrecioProducto = document.getElementById("precioProducto");
+const tbodyProductos = document.getElementById("tbodyProductos");
 
-formularioAgregarProducto.addEventListener("submit", (e) => {
+formAgregarProducto.addEventListener("submit", (e) => {
+
     e.preventDefault();
 
-    // Creamos el objeto
-    const producto = new Producto(
-        nombreProducto.value,
-        parseFloat(precioProducto.value),
-    );
+    const nombre = inputNombreProducto.value;
+    const precio = inputPrecioProducto.value;
 
-    // Lo agregamos a la lista
-    listaDeProductos.push(producto);
-
-    // Limpiamos los input
-    nombreProducto.value = "";
-    precioProducto.value = "";
-
-    // Renderizamos la tabla
-    renderizarProductos();
+    agregarProducto(nombre, precio);
 });
 
-inputBuscarProducto.addEventListener("input", () => {
-
-    // Obtener el valor del input cada vez que se ejecuta el evento
-    const val = inputBuscarProducto.value;
-
-    productosFiltrados = listaDeProductos.filter( (el) => {
-         return el.nombre.toLowerCase().includes(val.toLowerCase());
-    });
-
-    renderizarProductos();
-});
-
-thPrecio.addEventListener("click", () => {
-    ordenarPrecioAsc = !ordenarPrecioAsc;
-
-    ordenarProductos();
-});
-
-// Renderizar productos
 renderizarProductos();

@@ -5,42 +5,39 @@
     <title>Curso de JavaScript</title>
 
     <link href="css/estilos.css" rel="stylesheet" />
+
+    <style>
+        .productos {
+            margin-top: 1rem;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 0.25rem;
+        }
+    </style>
 </head>
 <body>
 
-<h1 id="tituloh1">Curso de JavaScript</h1>
-
-<!--<button type="button" id="botonsito">Clickeame</button>-->
-
-<!--<div class="caja" id="cajita">-->
-
-<!--</div>-->
-
-<!--<input type="text" id="inputsito" />-->
-
-<!--<form id="formsito">-->
-<!--    <input type="text" name="nombre_profesor" id="input1" />-->
-<!--    <input type="text" name="apellido_profesor" id="input2" />-->
-
-<!--    <button type="submit">Enviar formulario</button>-->
-<!--</form>-->
+<h1>Curso de JavaScript</h1>
 
 <form id="formAgregarProducto">
     <input type="text" id="nombreProducto" />
     <input type="text" id="precioProducto" />
-    <button type="submit">Agregar producto</button>
+    <button type="submit">Agregar</button>
 </form>
 
-<input type="text" id="buscarProducto" />
-
-<table>
+<table class="productos">
     <thead>
         <tr>
             <th>Nombre</th>
-            <th id="thPrecio">Precio</th>
+            <th>Precio</th>
+            <th>Acciones</th>
         </tr>
     </thead>
-    <tbody id="tbodyTablaProductos">
+
+    <tbody id="tbodyProductos">
+
     </tbody>
 </table>
 
