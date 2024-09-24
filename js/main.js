@@ -1,255 +1,250 @@
 /**
- * GUARDAR EN STORAGE
+ * SUGAR SYNTAX
  */
 
-// localStorage.setItem("cantidadProductosEnCarrito", 5);
-// localStorage.setItem("nombre", "Rodrigo");
-//
-// localStorage.setItem("nombre", "Pedro");
+// let var1 = 5;
+
+// var1 = var1 + 5;
+// var1 += 5;
+
+// var1 = var1 + 1;
+// var1++;
+
+// var1--;
+// var1 -= 3;
+
+// console.log(var1);
 
 /**
- * OBTENER VALOR DE STORAGE
+ * OPERADOR TERNARIO
  */
 
-// const nombre = localStorage.getItem("nombre");
-
-// const cantidadProductosEnCarrito = parseInt(localStorage.getItem("cantidadProductosEnCarrito"));
+// const numero = 15;
 //
-// console.log(cantidadProductosEnCarrito);
+// if(numero === 10) {
+//     console.log("Numero es igual a 10");
+// } else {
+//     console.log("NUmero no es igual a 10");
+// }
+//
+// (numero === 10) ? console.log("Numero es igual a 10") : console.log("Numero no es igual a 10");
+
+// Return implícito
+
+// const persona = {
+//     nombre: "Pedro",
+//     edad: 26,
+// };
+
+// let acceso = false;
+// if(persona.nombre === "Pedro" && persona.edad === 25) {
+//     acceso = true;
+// } else {
+//     acceso = false;
+// }
+
+// const acceso = (persona.nombre === "Pedro" && persona.edad === 25) ? true : false;
+//
+// console.log(acceso);
 
 /**
- * ALMACENAR ARRAYS
+ * OPERADOR AND
  */
-// const nombres = ["Pepe", "Juan", "Pedro"];
-//
-// localStorage.setItem("nombres", nombres);
 
-// const nombres = localStorage.getItem("nombres").split(",");
-//
-// console.log(nombres);
+// const persona = {
+//     nombre: "Juan",
+//     edad: 25,
+// };
+
+// if(persona.edad === 25) {
+//     console.log("TIene 25 años");
+// }
+
+// (persona.edad === 25) && console.log("TIene 25 años");
+
+// Return implícito
+
+// let acceso = false;
+// if(persona.nombre === "Pedro") {
+//     acceso = true;
+// }
+
+// const acceso = (persona.nombre === "Pedro") && true;
+// const acceso = (persona.nombre === "Pedro") && "Tiene acceso permitido";
+
+// console.log(acceso);
 
 /**
- * RECORRER STORAGE
+ * OPERADOR OR
  */
 
-// for(let i = 0; i < localStorage.length; i++) {
-//     const nombreClave = localStorage.key(i);
-//     const valor = localStorage.getItem(nombreClave);
+// const string = "1500";
+
+// const numero = parseInt(string);
+// const numero = parseInt(string) || 0;
+
+// console.log(numero);
+
+// let productos = [];
+// const productosJSON = localStorage.getItem("productos2");
 //
-//     console.log(`Clave: ${nombreClave} - Valor: ${valor}`);
+// if(productosJSON === null) {
+//     productos = [];
+// } else {
+//     productos = JSON.parse(productosJSON);
+// }
+
+// const productos = JSON.parse(localStorage.getItem("productos2")) || [];
+//
+// console.log(productos);
+
+/**
+ * ACCESO CONDICIONAL A UN OBJETO
+ */
+
+// const persona = {
+//     nombre: "Juan",
+//     edad: 20,
+//     profesion: {
+//         nombreProfesion: "Maestro",
+//     },
+//     trabajo: {
+//         nombreTrabajo: "Profesor",
+//         fechaDeIngreso: {
+//             fecha: "20/05/2021",
+//         }
+//     }
+// }
+//
+// const fecha = persona.trabajo?.fechaDeIngreso?.fecha;
+
+// if(fecha === undefined) {
+//     console.log("No tiene definida la fecha");
+// } else {
+//     console.log(fecha);
+// }
+
+// (fecha === undefined) ? console.log("No tiene definida la fecha") : console.log(fecha);
+//
+// console.log("fin del programa");
+
+/**
+ * DESESTRUCTURACIÓN
+ */
+
+// const producto = {
+//     nombre: "Yogurt",
+//     precio: 20,
+//     categoria: {
+//         nombre: "Lacteos",
+//         almacen: {
+//             nombre: "Almacen 1",
+//         }
+//     }
+// }
+
+// const nombre = producto.nombre;
+// const precio = producto.precio;
+// const categoria = producto.categoria;
+
+// const { nombre, precio, categoria } = producto;
+
+// console.log(nombre);
+// console.log(precio);
+// console.log(categoria);
+
+// const { nombre, precio, categoria: { nombreCategoria } } = producto;
+//
+// console.log(nombre);
+// console.log(precio);
+// console.log(nombreCategoria);
+
+// const {
+//     nombre,
+//     precio,
+//     categoria: {
+//         nombre: nombreCategoria,
+//         almacen: {
+//             nombre: nombreAlmacen,
+//         }
+//     }
+// } = producto;
+//
+// console.log(nombre);
+// console.log(precio);
+// console.log(nombreCategoria);
+// console.log(nombreAlmacen);
+
+// function test() {
+//     const {
+//         nombre,
+//         precio,
+//         categoria: {
+//             nombre: nombreCategoria,
+//             almacen: {
+//                 nombre: nombreAlmacen,
+//             }
+//         }
+//     } = producto;
+//
+//     console.log(nombre);
+//     console.log(precio);
+//     console.log(nombreCategoria);
+//     console.log(nombreAlmacen);
 // }
 
 /**
- * ELIMINAR DATOS STORAGE
+ * DESESTRUCTURACIÓN EN PARÁMETROS
  */
 
-// localStorage.removeItem("cantidadProductosEnCarrito");
-// localStorage.clear();
+// function mostrarPersona({nombre, edad}) {
+//
+//     console.log(`El nombre es: ${nombre}`);
+//     console.log(`La edad es: ${edad}`);
+// }
+//
+// const persona = {
+//     nombre: "Juan",
+//     edad: 20,
+// }
+//
+// mostrarPersona(persona);
+
+// const cuadrado = document.getElementById("cuadrado");
+//
+// cuadrado.addEventListener("click", ({x, y}) => {
+//
+//     // const x = e.x;
+//     // const y = e.y;
+//
+//     console.log(x);
+//     console.log(y);
+// })
 
 /**
- * ALMACENAR OBJETOS STORAGE
+ * DESESTRUCTURACIÓN DE ARRAYS
  */
 
-const persona = {
-    nombre: "Pedro",
-    edad: 25,
-    verNombre: () => {
-        console.log(this.nombre);
-    },
-    profesion: "Profesor",
-};
+// class Producto {
+//     constructor(nombre, precio) {
+//         this.nombre = nombre;
+//         this.precio = precio;
+//     }
+// }
 //
-// const personaJSON = JSON.stringify(persona);
+// const productos = [
+//     new Producto("Yogurt", 25),
+//     new Producto("Pescado", 50),
+//     new Producto("Leche", 20),
+//     new Producto("Lechuga", 40),
+// ];
+
+// const [producto1,,,producto4] = productos;
 //
-// localStorage.setItem("persona", personaJSON);
+// console.log(producto1);
+// console.log(producto4);
 
-// Obtener objetos JSON en Storage
-
-// const personaJSON = localStorage.getItem("persona");
+// const [producto1,,,,producto5] = productos;
 //
-// const persona = JSON.parse(personaJSON);
-//
-// console.log(persona);
-
-// Guardar arrays como JSON
-// const nombres = ["Pedro", "Gabriel", "Juan"];
-//
-// const nombresJSON = JSON.stringify(nombres);
-//
-// localStorage.setItem("nombres", nombresJSON);
-
-// const nombresJSON = localStorage.getItem("nombres");
-//
-// const nombres = JSON.parse(nombresJSON);
-//
-// console.log(nombres);
-
-// Parsear JSON con formato malo
-
-// const persona = JSON.parse('{"nombre":"Pedro","edad":25,"profesion":Profesor"}');
-//
-// console.log(persona);
-
-/**
- * EJEMPLO COMPLETO
- */
-
-// Objetos
-class Producto {
-    constructor(nombre, precio) {
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-}
-
-// Funciones
-function eliminarProducto(nombre) {
-
-    // Filtro los productos y obtengo todos menos el del nombre que quiero eliminar
-    listaProductos = listaProductos.filter( (el) => {
-        return el.nombre.toLowerCase() !== nombre.toLowerCase();
-    });
-
-    // Renderizar productos
-    renderizarProductos();
-
-    // Actualizar localStorage
-    actualizarLS();
-}
-
-function actualizarLS() {
-    const productosJSON = JSON.stringify(listaProductos);
-
-    localStorage.setItem("productos", productosJSON);
-}
-
-function obtenerProductosLS() {
-    const productosJSON = localStorage.getItem("productos");
-
-    // Si el usuario no tiene nada en localstorage
-    if(productosJSON === null) {
-
-        return [
-            new Producto("Yogurt", 25),
-            new Producto("Tomates", 30),
-            new Producto("Papa", 20),
-        ];
-
-    } else {
-
-        // Si el usuario tiene algo guardado en localStorage, lo parseamos y lo devolvemos
-
-        return JSON.parse(productosJSON);
-
-    }
-}
-
-function renderizarProductos() {
-
-    tbodyProductos.innerHTML = "";
-
-    for(const producto of listaProductos) {
-
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-            <td>${producto.nombre}</td>
-        `;
-
-        // Crear td con precio
-        const tdPrecio = document.createElement("td");
-        const p = document.createElement("p");
-        p.innerText = `$${producto.precio}`;
-        tdPrecio.append(p);
-
-        p.addEventListener("click", () => {
-
-            const inputNuevoPrecio = document.createElement("input");
-
-            inputNuevoPrecio.addEventListener("change", () => {
-                 const nuevoPrecio = inputNuevoPrecio.value;
-
-                 producto.precio = parseFloat(nuevoPrecio);
-
-                 // Actualizar LS
-                 actualizarLS();
-
-                 // Volver a agregar la etiqueta p actualizada
-                p.innerText = `$${producto.precio}`;
-                tdPrecio.innerHTML = "";
-                tdPrecio.append(p);
-
-                // Remover input
-                inputNuevoPrecio.remove();
-            });
-
-            tdPrecio.innerHTML = "";
-            tdPrecio.append(inputNuevoPrecio);
-        });
-
-        // Crear td con boton de eliminar
-        const tdAcciones = document.createElement("td");
-        const botonEliminar = document.createElement("button");
-        botonEliminar.innerText = "Eliminar";
-
-        botonEliminar.addEventListener("click", () => {
-
-            eliminarProducto(producto.nombre);
-
-        });
-
-        tdAcciones.append(botonEliminar);
-
-        // Agregar td al tr
-        tr.append(tdPrecio);
-        tr.append(tdAcciones);
-
-        // Agregar tr al tbody
-        tbodyProductos.append(tr);
-    }
-}
-
-function agregarProducto(nombre, precio) {
-
-    const buscarProducto = listaProductos.find( (el) => {
-        return el.nombre.toLowerCase() === nombre.toLowerCase();
-    });
-
-
-    if(buscarProducto === undefined) {
-        // Si el producto no existe
-
-        listaProductos.push(
-            new Producto(nombre, parseFloat(precio)),
-        );
-    } else {
-        // Si el producto existe
-
-        buscarProducto.precio = parseFloat(precio);
-    }
-
-    // Actualizar LocalStorage
-    actualizarLS();
-
-    // Renderizar productos
-    renderizarProductos();
-}
-
-// Inicio del programa
-let listaProductos = obtenerProductosLS();
-
-const formAgregarProducto = document.getElementById("formAgregarProducto");
-const inputNombreProducto = document.getElementById("nombreProducto");
-const inputPrecioProducto = document.getElementById("precioProducto");
-const tbodyProductos = document.getElementById("tbodyProductos");
-
-formAgregarProducto.addEventListener("submit", (e) => {
-
-    e.preventDefault();
-
-    const nombre = inputNombreProducto.value;
-    const precio = inputPrecioProducto.value;
-
-    agregarProducto(nombre, precio);
-});
-
-renderizarProductos();
+// console.log(producto1);
+// console.log(producto5);
