@@ -1,250 +1,275 @@
-/**
- * SUGAR SYNTAX
+// const nombres = ["Juan", "Pedro", "Matias"];
+
+// console.log(nombres);
+
+// console.log(...nombres);
+// console.log(nombres[0], nombres[1], nombres[2]);
+
+/*
+    MAX & MIN
  */
 
-// let var1 = 5;
+// const numeros = [1, 5, 60, 15, 20, 50, 75];
 
-// var1 = var1 + 5;
-// var1 += 5;
+// const maximo = Math.max(1, 5, 10, 15, 20);
 
-// var1 = var1 + 1;
-// var1++;
+// const maximo = Math.max(numeros[0], numeros[1], numeros[2], numeros[3], numeros[4], numeros[5]);
+// const maximo = Math.max(...numeros);
+// const minimo = Math.min(...numeros);
+//
+// console.log(maximo);
+// console.log(minimo);
 
-// var1--;
-// var1 -= 3;
-
-// console.log(var1);
-
-/**
- * OPERADOR TERNARIO
+/*
+    SPREAD EN ARRAYS
  */
 
-// const numero = 15;
-//
-// if(numero === 10) {
-//     console.log("Numero es igual a 10");
-// } else {
-//     console.log("NUmero no es igual a 10");
-// }
-//
-// (numero === 10) ? console.log("Numero es igual a 10") : console.log("Numero no es igual a 10");
+// const nombres = ["Juan", "Ramiro", "Gaston"];
 
-// Return implícito
+// const nuevosNombres = ["Juan", "Ramiro", "Gaston", "Pedro", "Matias"];
+// const nuevosNombres = [...nombres, "Pedro", "Matias"];
+//
+// console.log(nuevosNombres);
 
-// const persona = {
+/**
+ * SPREAD EN OBJETOS
+ */
+
+// const persona1 = {
 //     nombre: "Pedro",
-//     edad: 26,
-// };
-
-// let acceso = false;
-// if(persona.nombre === "Pedro" && persona.edad === 25) {
-//     acceso = true;
-// } else {
-//     acceso = false;
-// }
-
-// const acceso = (persona.nombre === "Pedro" && persona.edad === 25) ? true : false;
-//
-// console.log(acceso);
-
-/**
- * OPERADOR AND
- */
-
-// const persona = {
-//     nombre: "Juan",
 //     edad: 25,
+// }
+//
+// const persona2 = {
+//     ...persona1,
 // };
-
-// if(persona.edad === 25) {
-//     console.log("TIene 25 años");
-// }
-
-// (persona.edad === 25) && console.log("TIene 25 años");
-
-// Return implícito
-
-// let acceso = false;
-// if(persona.nombre === "Pedro") {
-//     acceso = true;
-// }
-
-// const acceso = (persona.nombre === "Pedro") && true;
-// const acceso = (persona.nombre === "Pedro") && "Tiene acceso permitido";
-
-// console.log(acceso);
-
-/**
- * OPERADOR OR
- */
-
-// const string = "1500";
-
-// const numero = parseInt(string);
-// const numero = parseInt(string) || 0;
-
-// console.log(numero);
-
-// let productos = [];
-// const productosJSON = localStorage.getItem("productos2");
 //
-// if(productosJSON === null) {
-//     productos = [];
-// } else {
-//     productos = JSON.parse(productosJSON);
+// persona2.nombre = "Juan";
+// console.log(persona2);
+
+// const persona1 = {
+//     nombre: "Pedro",
+//     edad: 25,
+//     profesion: "Profesor",
 // }
-
-// const productos = JSON.parse(localStorage.getItem("productos2")) || [];
 //
-// console.log(productos);
-
-/**
- * ACCESO CONDICIONAL A UN OBJETO
- */
-
-// const persona = {
+// const persona2 = {
+//     ...persona1,
 //     nombre: "Juan",
-//     edad: 20,
-//     profesion: {
-//         nombreProfesion: "Maestro",
-//     },
-//     trabajo: {
-//         nombreTrabajo: "Profesor",
-//         fechaDeIngreso: {
-//             fecha: "20/05/2021",
-//         }
-//     }
+//     edad: 30,
 // }
 //
-// const fecha = persona.trabajo?.fechaDeIngreso?.fecha;
-
-// if(fecha === undefined) {
-//     console.log("No tiene definida la fecha");
-// } else {
-//     console.log(fecha);
-// }
-
-// (fecha === undefined) ? console.log("No tiene definida la fecha") : console.log(fecha);
-//
-// console.log("fin del programa");
+// console.log(persona2);
 
 /**
- * DESESTRUCTURACIÓN
+ * REST PARAMETERS
  */
 
-// const producto = {
-//     nombre: "Yogurt",
-//     precio: 20,
-//     categoria: {
-//         nombre: "Lacteos",
-//         almacen: {
-//             nombre: "Almacen 1",
-//         }
-//     }
+// function funcion1(...parametros) {
+//     console.log(parametros);
 // }
-
-// const nombre = producto.nombre;
-// const precio = producto.precio;
-// const categoria = producto.categoria;
-
-// const { nombre, precio, categoria } = producto;
-
-// console.log(nombre);
-// console.log(precio);
-// console.log(categoria);
-
-// const { nombre, precio, categoria: { nombreCategoria } } = producto;
 //
-// console.log(nombre);
-// console.log(precio);
-// console.log(nombreCategoria);
+// funcion1("nombre", "nombre2", "nombre3", "nombre4", "nombre5")
 
-// const {
-//     nombre,
-//     precio,
-//     categoria: {
-//         nombre: nombreCategoria,
-//         almacen: {
-//             nombre: nombreAlmacen,
-//         }
+// function realizarOperacion(operacion, ...numeros) {
+//
+//     let resultado = 0;
+//
+//     if(operacion === "+") {
+//         resultado = numeros.reduce( (acc, el) => {
+//             return acc + el;
+//         }, 0);
+//     } else if(operacion === "-") {
+//         resultado = numeros.reduce( (acc, el) => {
+//             return acc - el;
+//         }, 0);
 //     }
-// } = producto;
 //
-// console.log(nombre);
-// console.log(precio);
-// console.log(nombreCategoria);
-// console.log(nombreAlmacen);
-
-// function test() {
-//     const {
-//         nombre,
-//         precio,
-//         categoria: {
-//             nombre: nombreCategoria,
-//             almacen: {
-//                 nombre: nombreAlmacen,
-//             }
-//         }
-//     } = producto;
-//
-//     console.log(nombre);
-//     console.log(precio);
-//     console.log(nombreCategoria);
-//     console.log(nombreAlmacen);
+//     console.log("El resultado es: " + resultado);
 // }
+//
+// realizarOperacion("+", 2, 5, 8, 10, 15);
+// realizarOperacion("-", 5, 10, 5);
 
 /**
- * DESESTRUCTURACIÓN EN PARÁMETROS
+ * EJEMPLO DE PREENTREGA 3
  */
 
-// function mostrarPersona({nombre, edad}) {
-//
-//     console.log(`El nombre es: ${nombre}`);
-//     console.log(`La edad es: ${edad}`);
-// }
-//
-// const persona = {
-//     nombre: "Juan",
-//     edad: 20,
-// }
-//
-// mostrarPersona(persona);
+// Objetos
+class Asiento {
+    constructor(id, seleccionado, comprado) {
+        this.id = id;
+        this.seleccionado = seleccionado;
+        this.comprado = comprado;
 
-// const cuadrado = document.getElementById("cuadrado");
-//
-// cuadrado.addEventListener("click", ({x, y}) => {
-//
-//     // const x = e.x;
-//     // const y = e.y;
-//
-//     console.log(x);
-//     console.log(y);
-// })
+        this.divAsiento = this.generarHTML();
+    }
 
-/**
- * DESESTRUCTURACIÓN DE ARRAYS
- */
+    generarHTML() {
+        const divAsiento = document.createElement("div");
+        divAsiento.className = "asiento";
 
-// class Producto {
-//     constructor(nombre, precio) {
-//         this.nombre = nombre;
-//         this.precio = precio;
-//     }
-// }
-//
-// const productos = [
-//     new Producto("Yogurt", 25),
-//     new Producto("Pescado", 50),
-//     new Producto("Leche", 20),
-//     new Producto("Lechuga", 40),
-// ];
+        // Si el asiento fue comprado
+        if(this.comprado) {
+            divAsiento.className += " comprado";
+        }
 
-// const [producto1,,,producto4] = productos;
-//
-// console.log(producto1);
-// console.log(producto4);
+        divAsiento.addEventListener("click", () => {
+            this.clickear();
+        });
 
-// const [producto1,,,,producto5] = productos;
-//
-// console.log(producto1);
-// console.log(producto5);
+        return divAsiento;
+    }
+
+    comprar() {
+        this.comprado = true;
+        this.divAsiento.className += " comprado";
+    }
+
+    clickear() {
+
+        // Si el asiento fue comprado, imprimo mensaje y no hago nada más
+        if(this.comprado) {
+            alertaError("ESTE ASIENTO YA FUE COMPRADO");
+            return;
+        }
+
+        if(this.seleccionado) {
+
+            // Deseleccionar asiento
+            this.seleccionado = false;
+
+            asientosSeleccionados = asientosSeleccionados.filter( (el) => {
+                return el.id !== this.id;
+            });
+
+            this.divAsiento.className = "asiento";
+
+        } else {
+
+            // Seleccionar asiento
+            this.seleccionado = true;
+
+            asientosSeleccionados.push(this);
+
+            this.divAsiento.className = "asiento seleccionado";
+        }
+
+        calcularTotales();
+    }
+}
+
+
+// Funciones
+function alertaError(mensaje) {
+    divAlertaError.innerHTML = `<p>${mensaje}</p>`;
+}
+
+function alertaBueno(mensaje) {
+    divAlertaBueno.innerHTML = `<p>${mensaje}</p>`;
+}
+
+function calcularTotales() {
+
+    const total = asientosSeleccionados.length * 50;
+
+    pTotal.innerHTML = `$${total}`;
+}
+
+function asientoComprado(idAsiento) {
+    return asientosComprados.some( (el) => {
+        return el === idAsiento;
+    });
+}
+
+function obtenerAsientosComprados() {
+    return JSON.parse(localStorage.getItem("asientos_comprados")) || [];
+}
+
+function guardarAsientosComprados() {
+    localStorage.setItem("asientos_comprados", JSON.stringify(asientosComprados));
+}
+
+function comprarAsientos() {
+
+    if(asientosSeleccionados.length === 0) {
+        alertaError("No tiene asientos seleccionados");
+        return;
+    }
+
+    for(const asientoSeleccionado of asientosSeleccionados) {
+        asientosComprados.push(asientoSeleccionado.id);
+
+        // Compramos el asiento
+        asientoSeleccionado.comprar();
+    }
+
+    // Guardamos en local Storage los asientos comprados
+    guardarAsientosComprados();
+
+    // Limpiamos el array de asientos seleccionados
+    asientosSeleccionados = [];
+
+    // Calcular total
+    calcularTotales();
+
+    // Mostrar mensaje
+    alertaBueno("LOS ASIENTOS FUERON COMPRADOS");
+}
+
+function renderizarAsientos() {
+    divAsientos.innerHTML = "";
+    asientos = [];
+
+    // Recorro la fila de asientos
+    for(const filaAsientos of idsAsientos) {
+
+        const divFila = document.createElement("div");
+        divFila.className = "fila";
+
+        // Recorro los IDs de asientos
+        for(const idAsiento of filaAsientos) {
+
+            const asientoFueComprado = asientoComprado(idAsiento);
+
+            // Creo el objeto asiento y agrego el asiento a la fila
+            const asiento = new Asiento(
+                idAsiento,
+                false,
+                asientoFueComprado,
+            );
+
+            // Agrego el objeto a mi array de asientos
+            asientos.push(asiento);
+
+            divFila.append(asiento.divAsiento);
+        }
+
+        // Agrego la fila al div de asientos
+        divAsientos.append(divFila);
+    }
+}
+
+// Inicio del programa
+
+const divAsientos = document.getElementById("asientos");
+const botonComprar = document.getElementById("comprar");
+const pTotal = document.getElementById("total");
+const divAlertaError = document.getElementById("alertaError");
+const divAlertaBueno = document.getElementById("alertaBueno");
+
+const idsAsientos = [
+    ["A1", "A2", "A3", "A4", "A5", "A6"],
+    ["B1", "B2", "B3", "B4", "B5", "B6"],
+    ["C1", "C2", "C3", "C4", "C5", "C6"],
+    ["D1", "D2", "D3", "D4", "D5", "D6"],
+    ["E1", "E2", "E3", "E4", "E5", "E6"],
+];
+let asientos = [];
+let asientosSeleccionados = [];
+let asientosComprados = obtenerAsientosComprados();
+
+// Renderizar asientos
+renderizarAsientos();
+
+botonComprar.addEventListener("click", comprarAsientos);

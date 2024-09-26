@@ -1,0 +1,31 @@
+#asientos .fila {
+    display: flex;
+    align-items: center;
+}
+
+#asientos .fila .asiento {
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    margin: 0.5rem;
+}
+
+#asientos .fila .asiento.seleccionado {
+    background: yellow;
+}
+
+#asientos .fila .asiento.comprado {
+    background: red;
+}
+
+#alertaError p {
+    color: red;
+    border: 1px solid red;
+    padding: 0.5rem;
+}
+
+#alertaBueno p {
+    color: green;
+    border: 1px solid green;
+    padding: 0.5rem;
+}
