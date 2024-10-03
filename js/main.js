@@ -1,135 +1,246 @@
-/**
- * SWEET ALERT
- */
-
-// Swal.fire({
-//     title: 'Eliminar producto',
-//     text: '¿Está seguro que desea eliminar el producto?',
-//     icon: 'warning',
-//     confirmButtonText: 'Si',
-//     showDenyButton: true,
-//     denyButtonText: "Cancelar",
-// }).then( (result) => {
+// const variable1 = "hola";
 //
-//     if(result.isConfirmed) {
-//         // Eliminar el producto...
+// setTimeout( () => {
+//     console.log(variable1);
+// }, 3000);
 //
-//         Swal.fire({
-//             title: 'Producto eliminado',
-//             text: 'El producto fue eliminado',
-//             icon: 'success',
-//         });
-//     } else {
-//         Swal.fire({
-//             title: 'Producto no eliminado',
-//             text: 'Usted no eliminó el producto',
-//             icon: 'error',
-//         });
+// setTimeout( () => {
+//     for(let i = 0; i < 10; i++) {
+//         console.log(i);
 //     }
-// });
+// }, 2000);
+//
+// setTimeout( () => {
+//     console.log("como estas");
+// }, 1000);
 
 /**
- * TOASTIFY
+ * SINCRONISMO CON ASINCRONISMO
  */
 
-// Toastify({
-//     text: "This is a toast",
-//     duration: 1000,
-//     // destination: "https://github.com/apvarun/toastify-js",
-//     newWindow: true,
-//     close: true,
-//     gravity: "top", // `top` or `bottom`
-//     position: "right", // `left`, `center` or `right`
-//     stopOnFocus: true, // Prevents dismissing of toast on hover
-//     style: {
-//         // background: "linear-gradient(to right, #00b09b, #96c93d)",
-//         background: "red",
-//     },
-//     onClick: function() {
-//         Toastify({
-//             text: "Nueva notificación",
-//             duration: 1000,
-//             newWindow: true,
-//             close: true,
-//             gravity: "top",
-//             position: "right",
-//             stopOnFocus: true,
-//             style: {
-//                 background: "green",
-//             },
-//         }).showToast();
-//     } // Callback after click
-// }).showToast();
+// const variable1 = "hola";
+//
+// setTimeout( () => {
+//     console.log(variable1);
+// }, 2000);
+//
+// for(let i = 0; i < 10; i++) {
+//     console.log(i);
+// }
+//
+// setTimeout( () => {
+//     console.log("como estas");
+// }, 1000);
 
 /**
- * LUXON
+ *
  */
 
-const DateTime = luxon.DateTime;
-
-// Instanciar fechas
-// const ayer = DateTime.local(2024, 9, 30, 10, 30);
-// const hoy = DateTime.now();
-
-// Mostrar fecha
-// console.log(ayer.day);
-// console.log(ayer.zoneName);
-
-// Formatear fechas
-// console.log(ayer.toLocaleString());
-// console.log(ayer.setLocale('es').toLocaleString(DateTime.DATE_FULL));
-
-// Operaciones
-// const nuevoAyer = ayer.plus({
-//     hours: 5,
-//     minutes: 30,
-// });
-
-// const nuevaFecha = ayer.plus({
-//     minutes: 190,
-// });
-
-// const nuevaFecha = ayer.minus({
-//     days: 5,
-// });
+// const variable1 = "hola";
 //
-// console.log(ayer.toString());
-// console.log(nuevaFecha.toString());
-
-// const fecha = DateTime.local(2024, 9, 30, 11, 30);
+// setTimeout( () => {
+//     console.log(variable1);
+// }, 0);
 //
-// const nuevaFecha = fecha.set({
-//     hour: 13,
-//     minute: 45,
-// });
+// for(let i = 0; i < 10; i++) {
+//     console.log(i);
+// }
 //
-// console.log(nuevaFecha.toString());
+// console.log("como estas");
 
 /**
- * CLASE DURATION
+ * CALL STACK
  */
 
-// const Duration = luxon.Duration;
-
-// const hora = Duration.fromObject({
-//     hour: 10,
-//     minute: 30,
-// });
+// function multiplicar(numero1, numero2) {
 //
-// const nuevaHora = hora.plus({
-//     hours: 5,
-//     minutes: 31,
-// });
+//     debugger;
+//
+//     return numero1 * numero2;
+// }
+//
+// function calcular2(numero1, numero2) {
+//
+//     debugger;
+//
+//     const multiplo = multiplicar(numero1, numero2);
+//
+//     debugger;
+//
+//     return multiplo;
+// }
+//
+// function calcular(numero1, numero2) {
+//     debugger;
+//
+//     const calculo = calcular2(numero1, numero2);
+//
+//     debugger;
+//
+//     return calculi;
+// }
+//
+// console.log(calcular(10, 20));
 
 /**
- * INTERVAL
+ * EVENT LOOP
  */
 
-const Interval = luxon.Interval;
+// const variable1 = "hola";
+//
+// setTimeout( () => {
+//     console.log(variable1);
+// }, 2000);
+//
+// for(let i = 0; i < 10; i++) {
+//     console.log(i);
+// }
+//
+// setTimeout( () => {
+//     console.log("como estas");
+// }, 1000);
 
-const fecha1 = DateTime.local(2024, 9, 25, 10);
-const fecha2 = DateTime.local(2024, 9, 28, 10);
+/**
+ * SET INTERVAL
+ */
 
-const i = Interval.fromDateTimes(fecha1, fecha2);
+// const interval = setInterval( () => {
+//     for(let i = 0; i < 5; i++) {
+//         console.log(i);
+//     }
+// }, 2000);
+//
+// const timeout = setTimeout( () => {
+//     clearInterval(interval);
+//     console.log("Se eliminó el intervalo");
+// }, 3000);
 
-console.log(i.length('milliseconds'));
+/**
+ * PROMESAS
+ */
+
+// const promesa = new Promise( (resolve, reject) => {
+//
+//     // Acción asincrónica
+//     // Cuerpo de la promesa...
+//
+// });
+//
+// console.log(promesa);
+
+// Login
+
+// function login() {
+//     return new Promise( (resolve, reject) => {
+//
+//         // Simular request a una API para el login
+//         setTimeout( () => {
+//
+//             console.log("Se procesó el request...");
+//
+//             if(
+//                 usuario === "rodri" &&
+//                 password === "123"
+//             ) {
+//                 resolve({
+//                     id: 4,
+//                     email: "rodri@email.com",
+//                 });
+//             } else {
+//                 reject("Usuario o contraseña inválidos");
+//             }
+//
+//         }, 3000);
+//
+//     });
+// }
+//
+// const usuario = "rodri";
+// const password = "1234";
+//
+// // console.log(login());
+//
+// login()
+//     .then( (response) => {
+//
+//         console.log(response);
+//         console.log("La promesa se acepta");
+//
+//     })
+//     .catch( (err) => {
+//
+//         console.log(err);
+//         console.log("La promesa se rechaza");
+//
+//     })
+//     .finally( () => {
+//         console.log("Finalizó el proceso de login");
+//     });
+
+// console.log("1");
+// console.log("2");
+// console.log("3");
+
+/**
+ * EJEMPLO DE PROMESAS
+ */
+
+// Funciones
+function obtenerProductos() {
+    return new Promise( (resolve, reject) => {
+
+        setTimeout( () => {
+
+            const numeroRandom = Math.round(Math.random());
+
+            // Si el número es 1, la API anda bien
+            if(numeroRandom) {
+                const productos = [
+                    {nombre: "Pepino", precio: 20},
+                    {nombre: "Tomates", precio: 50},
+                    {nombre: "Jabón", precio: 75},
+                    {nombre: "Lechuga", precio: 25},
+                    {nombre: "Yogurt", precio: 30},
+                ];
+                const jsonProductos = JSON.stringify(productos);
+
+                resolve(jsonProductos);
+            } else {
+                reject("Error en la API");
+            }
+
+        }, 1500);
+    });
+}
+
+function renderizarProductos(productos) {
+
+    tbodyProductos.innerHTML = "";
+
+    for(const producto of productos) {
+
+        tbodyProductos.innerHTML += `<tr>
+            <td>${producto.nombre}</td>
+            <td>$${producto.precio}</td>
+            </tr>
+        `;
+    }
+}
+
+// Inicio del programa
+const tbodyProductos = document.getElementById("tbodyProductos");
+
+obtenerProductos()
+    .then( (response) => {
+
+        const productos = JSON.parse(response);
+
+        renderizarProductos(productos);
+    })
+    .catch( (err) => {
+        alert(err);
+    });
+
+// ...
+// ...
+// ...
