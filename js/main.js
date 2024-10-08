@@ -1,246 +1,161 @@
-// const variable1 = "hola";
-//
-// setTimeout( () => {
-//     console.log(variable1);
-// }, 3000);
-//
-// setTimeout( () => {
-//     for(let i = 0; i < 10; i++) {
-//         console.log(i);
-//     }
-// }, 2000);
-//
-// setTimeout( () => {
-//     console.log("como estas");
-// }, 1000);
-
-/**
- * SINCRONISMO CON ASINCRONISMO
- */
-
-// const variable1 = "hola";
-//
-// setTimeout( () => {
-//     console.log(variable1);
-// }, 2000);
-//
-// for(let i = 0; i < 10; i++) {
-//     console.log(i);
-// }
-//
-// setTimeout( () => {
-//     console.log("como estas");
-// }, 1000);
-
-/**
- *
- */
-
-// const variable1 = "hola";
-//
-// setTimeout( () => {
-//     console.log(variable1);
-// }, 0);
-//
-// for(let i = 0; i < 10; i++) {
-//     console.log(i);
-// }
-//
-// console.log("como estas");
-
-/**
- * CALL STACK
- */
-
-// function multiplicar(numero1, numero2) {
-//
-//     debugger;
-//
-//     return numero1 * numero2;
-// }
-//
-// function calcular2(numero1, numero2) {
-//
-//     debugger;
-//
-//     const multiplo = multiplicar(numero1, numero2);
-//
-//     debugger;
-//
-//     return multiplo;
-// }
-//
-// function calcular(numero1, numero2) {
-//     debugger;
-//
-//     const calculo = calcular2(numero1, numero2);
-//
-//     debugger;
-//
-//     return calculi;
-// }
-//
-// console.log(calcular(10, 20));
-
-/**
- * EVENT LOOP
- */
-
-// const variable1 = "hola";
-//
-// setTimeout( () => {
-//     console.log(variable1);
-// }, 2000);
-//
-// for(let i = 0; i < 10; i++) {
-//     console.log(i);
-// }
-//
-// setTimeout( () => {
-//     console.log("como estas");
-// }, 1000);
-
-/**
- * SET INTERVAL
- */
-
-// const interval = setInterval( () => {
-//     for(let i = 0; i < 5; i++) {
-//         console.log(i);
-//     }
-// }, 2000);
-//
-// const timeout = setTimeout( () => {
-//     clearInterval(interval);
-//     console.log("Se eliminó el intervalo");
-// }, 3000);
-
-/**
- * PROMESAS
- */
-
-// const promesa = new Promise( (resolve, reject) => {
-//
-//     // Acción asincrónica
-//     // Cuerpo de la promesa...
-//
-// });
-//
-// console.log(promesa);
-
-// Login
-
-// function login() {
-//     return new Promise( (resolve, reject) => {
-//
-//         // Simular request a una API para el login
-//         setTimeout( () => {
-//
-//             console.log("Se procesó el request...");
-//
-//             if(
-//                 usuario === "rodri" &&
-//                 password === "123"
-//             ) {
-//                 resolve({
-//                     id: 4,
-//                     email: "rodri@email.com",
-//                 });
-//             } else {
-//                 reject("Usuario o contraseña inválidos");
-//             }
-//
-//         }, 3000);
-//
-//     });
-// }
-//
-// const usuario = "rodri";
-// const password = "1234";
-//
-// // console.log(login());
-//
-// login()
+// const peticion = fetch("https://rickandmortyapi.com/api/character")
 //     .then( (response) => {
+//         const responseJson = response.json();
 //
-//         console.log(response);
-//         console.log("La promesa se acepta");
+//         responseJson.then( (json) => {
 //
-//     })
-//     .catch( (err) => {
-//
-//         console.log(err);
-//         console.log("La promesa se rechaza");
-//
-//     })
-//     .finally( () => {
-//         console.log("Finalizó el proceso de login");
+//             console.log(json);
+//             // ...
+//         });
 //     });
 
-// console.log("1");
-// console.log("2");
-// console.log("3");
+// fetch("https://rickandmortyapi.com/api/character")
+//     .then( (response) => {
+//         return response.json();
+//     })
+//     .then( (json) => {
+//
+//         const results = json.results;
+//
+//         for(const personaje of results) {
+//             console.log(personaje.name);
+//         }
+//
+//     });
 
 /**
- * EJEMPLO DE PROMESAS
+ * CONSUMIR UNA API Y MOSTRAR LOS RESULTADOS EN EL DOM
  */
 
 // Funciones
-function obtenerProductos() {
-    return new Promise( (resolve, reject) => {
 
-        setTimeout( () => {
+// async function obtenerPokemones() {
+//     // Código asincrónico
+//     fetch(next)
+//         .then( (response) => {
+//             return response.json();
+//         })
+//         .then( (json) => {
+//
+//             console.log("se terminó de ejecutar");
+//             next = json.next;
+//             renderizarPokemones(json.results);
+//         });
+//
+//     console.log("asd");
+//     console.log("asd2");
+//
+//     // Código sincrónico
+//     // const response = await fetch(next);
+//     // const json = await response.json();
+//     //
+//     // console.log("se terminó de ejecutar");
+//     // next = json.next;
+//     // renderizarPokemones(json.results);
+//
+//     console.log("asd");
+//     console.log("asd2");
+// }
+//
+// function obtenerInformacionPokemon(
+//     nombrePokemon,
+//     divPokemon
+// ) {
+//     fetch(`https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`)
+//         .then( (response) => {
+//             return response.json();
+//         })
+//         .then( (json) => {
+//
+//             const p1 = document.createElement("p");
+//             p1.innerHTML = `<strong>Peso:</strong> ${json.weight}`;
+//
+//             const p2 = document.createElement("p");
+//             p2.innerHTML = `<strong>Altura:</strong> ${json.height}`;
+//
+//             divPokemon.append(p1, p2);
+//         });
+//
+// }
+//
+// function renderizarPokemones(pokemones) {
+//     // divPokemones.innerHTML = "";
+//
+//     for(const pokemon of pokemones) {
+//
+//         const divPokemon = document.createElement("div");
+//         divPokemon.innerHTML = `<h5>${pokemon.name}</h5>`;
+//
+//         divPokemon.addEventListener("click", () => {
+//
+//             obtenerInformacionPokemon(pokemon.name, divPokemon);
+//
+//         });
+//
+//         divPokemones.append(divPokemon);
+//     }
+// }
+//
+// // Inicio del programa
+//
+// let next = "https://pokeapi.co/api/v2/pokemon";
+// const divPokemones = document.getElementById("pokemones");
+// const botonVerMas = document.getElementById("verMas");
+//
+// botonVerMas.addEventListener("click", () => {
+//     obtenerPokemones();
+// });
+//
+// obtenerPokemones();
 
-            const numeroRandom = Math.round(Math.random());
+/**
+ * CONSUMIR ARCHIVO JSON CON FETCH
+ */
 
-            // Si el número es 1, la API anda bien
-            if(numeroRandom) {
-                const productos = [
-                    {nombre: "Pepino", precio: 20},
-                    {nombre: "Tomates", precio: 50},
-                    {nombre: "Jabón", precio: 75},
-                    {nombre: "Lechuga", precio: 25},
-                    {nombre: "Yogurt", precio: 30},
-                ];
-                const jsonProductos = JSON.stringify(productos);
+// fetch('/productos.json')
+//     .then( (response) => {
+//         return response.json();
+//     })
+//     .then( (json) => {
+//         // renderizarProductos(json);
+//     });
 
-                resolve(jsonProductos);
-            } else {
-                reject("Error en la API");
-            }
+/**
+ * ENVIAR POST CON FETCH
+ */
 
-        }, 1500);
-    });
-}
-
-function renderizarProductos(productos) {
-
-    tbodyProductos.innerHTML = "";
-
-    for(const producto of productos) {
-
-        tbodyProductos.innerHTML += `<tr>
-            <td>${producto.nombre}</td>
-            <td>$${producto.precio}</td>
-            </tr>
-        `;
+fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify({
+        title: "Post nuevo",
+        body: "Body del post nuevo",
+        userId: 1,
+    }),
+    headers: {
+        "Content-Type": "application/json",
     }
-}
-
-// Inicio del programa
-const tbodyProductos = document.getElementById("tbodyProductos");
-
-obtenerProductos()
+})
     .then( (response) => {
-
-        const productos = JSON.parse(response);
-
-        renderizarProductos(productos);
+        return response.json();
     })
-    .catch( (err) => {
-        alert(err);
+    .then( (json) => {
+        console.log(json);
     });
 
-// ...
-// ...
-// ...
+fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    method: "PUT",
+    body: JSON.stringify({
+        title: "Actualizar post",
+        body: "Body del post actualizado",
+        userId: 1,
+    }),
+    headers: {
+        "Content-Type": "application/json",
+    }
+})
+    .then( (response) => {
+        return response.json();
+    })
+    .then( (json) => {
+        console.log(json);
+    })

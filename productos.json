@@ -1,0 +1,14 @@
+[
+  {
+    "nombre": "Tomates",
+    "precio": 25
+  },
+  {
+    "nombre": "Lechuga",
+    "precio": 30
+  },
+  {
+    "nombre": "Yogurt",
+    "precio": 45
+  }
+]
