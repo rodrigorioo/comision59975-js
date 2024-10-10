@@ -1,0 +1,23 @@
+{
+  "name": "clase",
+  "version": "1.0.0",
+  "description": "Repositorio para la comisión 59975",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigorioo/comision59975-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigorioo/comision59975-js/issues"
+  },
+  "homepage": "https://github.com/rodrigorioo/comision59975-js#readme",
+  "dependencies": {
+    "luxon": "^3.5.0",
+    "sweetalert2": "^11.14.2"
+  }
+}
